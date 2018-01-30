@@ -1,0 +1,307 @@
+/* ==========================================================================
+   Image Gallery shortcode style - begin
+   ========================================================================== */
+
+.mkd-image-gallery {
+    @include mkdRelativeHolderLayout();
+    
+	.mkd-ig-grid {
+
+		span.mkd-image-gallery-hover {
+			position: absolute;
+			display: block;
+			background-color: rgba(0,0,0,.5);
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+
+			@include mkdTransition(opacity 0.2s ease-out);
+		}
+		
+		.mkd-ig-image {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			float: left;
+			box-sizing: border-box;
+
+			overflow: hidden;
+
+			&:hover span.mkd-image-gallery-hover {
+				opacity: 0.95;
+
+				@include mkdTransform(scale(1));
+			}
+
+			.mkd-ig-image-inner {
+				position: relative;
+				display: inline-block;
+			}
+			
+			a, img {
+				display: block;
+			}
+
+			a {
+			   position: relative;
+				
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					margin: -19px 0 0 -19px;
+					content: '\4c';
+					font-family: 'ElegantIcons';
+					speak: none;
+					color: #fff;
+					font-size: 38px;
+					line-height: 1;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					-webkit-font-smoothing: antialiased;
+					z-index: 2;
+					opacity: 0;
+					@include mkdTransition(opacity .2s ease-in-out);
+				}
+				
+				&:after {
+					@include mkdAbsoluteHolderLayout();
+					content: '';
+					background-color: rgba($first-main-color, 0.7);
+					opacity: 0;
+					@include mkdTransition(opacity .2s ease-in-out);
+				}
+				
+				&:hover {
+					
+					&:before,
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+		$gallery_space_label: ('no', 'tiny', 'small', 'normal');
+		$gallery_space_width: (0, 5, 10, 15);
+		
+		@for $i from 0 to length($gallery_space_label) {
+			&.mkd-ig-#{nth($gallery_space_label,$i+1)}-space {
+				$column_width: nth($gallery_space_width,$i+1);
+				$column_width_margin: $column_width * 2;
+				
+				@if($column_width == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$column_width}px;
+				}
+				
+				.mkd-ig-image {
+					padding: 0 #{$column_width}px;
+					margin: 0 0 #{$column_width_margin}px;
+				}
+			}
+		}
+		
+		$gallery_columns: ('2', '3', '4', '5', '6');
+		@for $i from 0 to length($gallery_columns) {
+			&.mkd-ig-columns-#{nth($gallery_columns, $i+1)} {
+				$column_width: 100%/($i+2);
+				
+				.mkd-ig-image {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+						
+						&:nth-child(#{$i+2}n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+		
+		&.mkd-ig-grayscale {
+			
+			.mkd-ig-image {
+				
+				img {
+					-webkit-filter: grayscale(100%);
+					-moz-filter: grayscale(100%);
+					filter: gray;
+					filter: grayscale(100%);
+					filter: url(img/desaturate.svg#grayscale);
+				}
+				
+				.touch & {
+					cursor: pointer;
+				}
+				
+				&:hover {
+					
+					img {
+						-webkit-filter: grayscale(0);
+						filter: none;
+					}
+				}
+			}
+		}
+	}
+	
+	.mkd-ig-slider {
+		@include mkdRelativeHolderLayout();
+		visibility: hidden;
+		
+		.owl-item {
+			
+			a {
+				position: relative;
+				display: block;
+				
+				img {
+					display: block;
+				}
+					
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					margin: -19px 0 0 -19px;
+					content: '\4c';
+					font-family: 'ElegantIcons';
+					speak: none;
+					color: #fff;
+					font-size: 38px;
+					line-height: 1;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					-webkit-font-smoothing: antialiased;
+					z-index: 2;
+					opacity: 0;
+					@include mkdTransition(opacity .2s ease-in-out);
+				}
+				
+				&:after {
+					@include mkdAbsoluteHolderLayout();
+					content: '';
+					background-color: rgba($first-main-color, 0.7);
+					opacity: 0;
+					@include mkdTransition(opacity .2s ease-in-out);
+				}
+				
+				&:hover {
+					
+					&:before,
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+		&.mkd-nav-pag-enabled {
+			
+			.owl-nav {
+				
+				.owl-prev,
+				.owl-next {
+					$pos: calc(-50% - 19px); // 19 is is half height of pagination control
+					@include mkdTransform(translateY($pos));
+				}
+			}
+		}
+	}
+	
+	.owl-nav {
+		
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			@include mkdTransform(translateY(-50%));
+			
+			&:hover {
+				
+				.mkd-prev-icon,
+				.mkd-next-icon {
+					color: $first-main-color;
+				}
+			}
+		}
+		
+		.owl-prev {
+			left: 30px;
+		}
+		
+		.owl-next {
+			right: 30px;
+		}
+		
+		.mkd-prev-icon,
+		.mkd-next-icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: $default-heading-color;
+			line-height: 1;
+			@include mkdTransition(color .2s ease-out);
+			
+			.mkd-icon-arrow {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 46px;
+				line-height: inherit;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+	
+	.owl-dots {
+		text-align: center;
+		margin: 16px 0 0;
+		
+		.owl-dot {
+			display: inline-block;
+			vertical-align: middle;
+			
+			span {
+				display: inline-block;
+				vertical-align: middle;
+				width: 12px;
+				height: 12px;
+				margin: 0 6px;
+				border-radius: 3em;
+				background-color: transparent;
+				border: 2px solid rgba($default-heading-color, .5);
+				@include mkdTransition(background-color .2s ease-out, border .2s ease-out);
+				box-sizing: border-box;
+			}
+			
+			&:hover,
+			&.active {
+				
+				span {
+					background-color: $default-heading-color;
+					border-color: $default-heading-color;
+				}
+			}
+		}
+	}
+	
+	.owl-carousel .owl-item img {
+		-webkit-transform: translateZ(0); //chrome text cut off fix
+	}
+}
+/* ==========================================================================
+   Image Gallery shortcode style - end
+   ========================================================================== */

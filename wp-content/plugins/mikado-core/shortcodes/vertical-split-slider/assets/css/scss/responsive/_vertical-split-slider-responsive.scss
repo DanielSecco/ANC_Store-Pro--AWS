@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Vertical Split Slider shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-large {
+	#multiscroll-nav {
+		bottom: 25px;
+		@include mkdTransform(translateX(-26px));
+		ul {
+			li {
+
+				margin: 23px 0px;
+
+				a {
+					width: 25px;
+					&:before {
+						font-size: 22px;
+						left: -33px;
+						top: -10px;
+					}
+
+					&.active,
+					&:hover {
+						width: 90px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-landscape {
+	
+	body.mkd-vss-initialized {
+		overflow-y: visible !important;
+		height: auto !important;
+	}
+	
+	.mkd-vertical-split-slider,
+	#multiscroll-nav {
+		display: none;
+	}
+
+	.mkd-vss-responsive {
+		display: block;
+	}
+
+	.mkd-vertical-split-slider-widget-area{
+		display: none;
+	}
+}
+/* ==========================================================================
+   Vertical Split Slider shortcode responsive style - end
+   ========================================================================== */

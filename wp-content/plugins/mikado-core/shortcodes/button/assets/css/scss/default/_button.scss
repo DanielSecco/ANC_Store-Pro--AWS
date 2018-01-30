@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+
+.mkd-btn {
+    @include mkdButtonDefaultStyle();
+    @include mkdButtonMediumParams();
+
+    &.mkd-btn-simple {
+        padding: 0 !important;
+        color: $default-text-color;
+        background-color: transparent;
+        border: 0;
+        vertical-align: middle;
+
+        .mkd-btn-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &:not(.mkd-btn-custom-hover-color):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            color: $default-heading-color !important;
+        }
+
+        &:not(.mkd-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: transparent !important;
+        }
+
+        &:not(.mkd-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: transparent !important;
+        }
+    }
+
+    &.mkd-btn-solid {
+        @include mkdButtonSolidColor();
+
+        &:not(.mkd-btn-custom-hover-color):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            color: #fff !important;
+        }
+
+        &:not(.mkd-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: $default-btn-hover-background-color !important;
+        }
+
+        &:not(.mkd-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: $default-btn-hover-background-color !important;
+        }
+    }
+
+    &.mkd-btn-outline {
+	    @include mkdButtonOutlineColor();
+
+        &:not(.mkd-btn-custom-hover-color):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            color: #fff !important;
+        }
+
+        &:not(.mkd-btn-custom-hover-bg):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            background-color: #d3d3d3 !important;
+        }
+
+        &:not(.mkd-btn-custom-border-hover):hover {
+            //important because of inline color attribute. :not is used so we don't have to use important in JS
+            border-color: #d3d3d3 !important;
+        }
+    }
+
+    &.mkd-btn-small {
+        @include mkdButtonSmallParams();
+    }
+
+    &.mkd-btn-medium {
+        //same as default
+    }
+
+    &.mkd-btn-large {
+        @include mkdButtonLargeParams();
+    }
+
+    &.mkd-btn-huge {
+        @include mkdButtonHugeParams();
+    }
+
+    &.mkd-btn-icon {
+
+        > i,
+        > span:not(.mkd-btn-text) {
+            position: relative;
+            top: -1px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.142857142857143em;
+            @include mkdTransition(all .2s);
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+
+        &:hover {
+            > i,
+            > span:not(.mkd-btn-text) {
+                @include mkdTransform(translateX(5px));
+            }
+        }
+    }
+}
+
+input[type=submit].mkd-btn,
+button.mkd-btn {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */

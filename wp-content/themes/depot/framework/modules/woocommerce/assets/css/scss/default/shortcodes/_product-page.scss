@@ -1,0 +1,336 @@
+/* Woocommerce Product Page shortcode style - begin
+========================================================================== */
+
+div.woocommerce {
+
+    > .single-product {
+
+        .images {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+
+            a {
+                @include mkdRelativeHolderLayout();
+
+                img {
+                    position: relative;
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            .thumbnails {
+                margin: 0 -5px;
+
+                a {
+                    margin: 10px 0 0;
+                    padding: 0 5px;
+                    box-sizing: border-box;
+                }
+
+                &.columns-2 {
+                    
+                    a {
+                        float: left;
+                        width: 50%;
+                        opacity: 0.7;
+                        @include mkdTransition(opacity .2s ease-out);
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &.columns-4 {
+                    
+                    a {
+                        float: left;
+                        width: 25%;
+                        opacity: 0.7;
+                        @include mkdTransition(opacity .2s ease-out);
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            figure {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 -10px;
+            }
+
+            .woocommerce-product-gallery__image {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0;
+                padding: 0 10px;
+                box-sizing: border-box;
+
+                &:first-child {
+                    width: 100%;
+                }
+            }
+
+            &.woocommerce-product-gallery--with-images {
+
+                .woocommerce-product-gallery__image {
+
+                    &:not(:first-child) {
+                        float: left;
+                        padding-top: 20px;
+                    }
+                }
+            }
+
+            $thumb_3_columns_label: ('columns-2', 'columns-3', 'columns-4');
+            @for $i from 0 to length($thumb_3_columns_label) {
+                &.woocommerce-product-gallery--#{nth($thumb_3_columns_label, $i+1)} {
+                    $column_width: 100%/($i+2);
+
+                    .woocommerce-product-gallery__image {
+
+                        &:not(:first-child) {
+                            width: $column_width;
+                        }
+                    }
+                }
+            }
+        }
+
+        .woocommerce-tabs {
+            @include mkdRelativeHolderLayout();
+            margin: -62px 0 0;
+
+            h2 {
+                font-size: 16px;
+                line-height: 25px;
+                text-transform: uppercase;
+                margin: 20px 0 18px;
+            }
+
+            ul.tabs {
+                @include mkdRelativeHolderLayout();
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                clear: both;
+
+                > li {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    float: left;
+                    border: 1px solid $default-border-color;
+                    border-bottom: 0;
+
+                    &:not(:first-child) {
+                        border-left: 0;
+                    }
+
+                    > a {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                        color: #323232;
+                        padding: 16px 38px;
+                        background-color: #fafafa;
+                        text-transform: uppercase;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            bottom: -1px;
+                            left: 0;
+                            display: block;
+                            height: 1px;
+                            width: 100%;
+                            background-color: $default-border-color;
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            background-color: $first-main-color;
+                            color: #fff;
+
+                            &:after {
+                                background-color: $first-main-color;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .entry-content {
+                padding: 70px 1000px 65px;
+                margin: 0 -1000px;
+                border-top: 1px solid $default-border-color;
+                border-bottom: 1px solid $default-border-color;
+                background-color: #fff;
+            }
+
+            table {
+                margin: 0 0 20px;
+
+                tr, th {
+                    border: 0;
+                }
+
+                td, th {
+                    padding: 3px 0;
+                    vertical-align: middle;
+                    text-align: left;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                th {
+                    font-weight: 400;
+                    width: 1%;
+                    padding: 0 10px 0 0;
+                }
+
+                td {
+                    width: 99%;
+                }
+            }
+
+            #reviews {
+
+                ol.commentlist {
+                    list-style: none;
+
+                    li {
+                        padding-top: 10px;
+
+                        &:first-child {
+                            padding: 0;
+                        }
+                    }
+
+                    .comment_container {
+
+                        @include mkdRelativeHolderLayout();
+
+                        img {
+                            float: left;
+                            width: 60px;
+                        }
+
+                        .comment-text {
+                            padding: 0 0 0 80px;
+
+                            .star-rating {
+                                margin: 0;
+                            }
+
+                            p {
+                                display: block;
+                                margin: 5px 0 0;
+                            }
+                        }
+                    }
+                }
+
+                .comment-respond {
+                    margin-top: 15px;
+
+                    .comment-reply-title {
+                        color: $default-heading-color;
+                        margin: 0 0 10px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        line-height: 36px;
+                        text-transform: uppercase;
+                    }
+
+                    .stars {
+                        overflow: hidden;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    .stars a {
+                        position: relative;
+                        display: inline-block;
+                        color: transparent;
+                        font-size: 0;
+                        margin: 0;
+
+                        &:before {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: middle;
+                            font-family: "ElegantIcons";
+                            content: "\e031";
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 3px;
+                            overflow: hidden;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                        }
+
+                        &.active:after {
+                            position: absolute;
+                            right: 0px;
+                            bottom: 6px;
+                            display: block;
+                            font-family: "ElegantIcons";
+                            font-size: 12px;
+                            line-height: 1;
+                            letter-spacing: 3px;
+                            content: "\e033\e033\e033\e033\e033";
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                        }
+                    }
+
+                    .comment-form-comment label {
+                        display: block;
+                        margin: 0 0 10px;
+                    }
+                }
+            }
+        }
+
+        .related.products,
+        .upsells.products {
+            margin: 70px 0 20px;
+
+            > h2 {
+                display: block;
+                margin: 32px 0;
+                font-size: 12px;
+                line-height: 16px;
+                text-transform: uppercase;
+                color: $default-text-color;
+            }
+
+            .product {
+                .mkd-pl-text-wrapper {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Woocommerce Product Page shortcode style - end
+========================================================================== */

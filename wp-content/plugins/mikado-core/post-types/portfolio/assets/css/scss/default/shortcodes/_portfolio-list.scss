@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Portfolio shortcode style - begin
+   ========================================================================== */
+
+.mkd-portfolio-list-holder {
+    @include mkdRelativeHolderLayout();
+
+	/***** Article Global Style - begin *****/
+
+    article {
+	    @include mkdRelativeHolderLayout();
+        box-sizing: border-box;
+
+	    .touch & {
+		    cursor: pointer;
+	    }
+
+	    .mkd-pl-item-inner {
+		    @include mkdRelativeHolderLayout();
+		    overflow: hidden;
+	    }
+	    
+	    .mkd-pli-image {
+		    @include mkdRelativeHolderLayout();
+		    
+		    img {
+			    display: block;
+			    width: 100%;
+		    }
+	    }
+
+	    .mkd-pli-link {
+		    @include mkdAbsoluteHolderLayout();
+	    }
+
+	    .mkd-pli-text-wrapper {
+	        @include mkdTableLayout();
+	    }
+
+	    .mkd-pli-text {
+		    @include mkdTableCellLayout();
+
+		    .mkd-pli-title {
+				margin: 0;
+				letter-spacing: 0.1em;
+				margin-top: -12px;
+		    }
+
+		    .mkd-pli-category-holder {
+			    position: relative;
+			    display: block;
+			    margin: 5px 0 0;
+
+			    a {
+				    position: relative;
+				    display: inline-block;
+				    vertical-align: middle;
+				    padding: 0 6px 0 0;
+				    margin: 0 -2px 0 0;
+				    z-index: 8;
+					font-size: 14px;
+					color: #929292;
+				    
+				    &:after {
+					    position: absolute;
+					    top: 0;
+					    right: 3px;
+					    content: ',';
+					    color: inherit;
+					    font-size: 12px;
+					    line-height: inherit;
+				    }
+
+				    &:last-child {
+					    margin: 0;
+					    padding: 0;
+					    
+					    &:after {
+						    display: none;
+					    }
+				    }
+			    }
+		    }
+
+		    .mkd-pli-excerpt {
+			    margin: 3px 0 0;
+		    }
+	    }
+    }
+
+	/***** Article Global Style - end *****/
+	
+	/***** Specific Global Style - begin *****/
+	
+	&.mkd-pl-no-content {
+		
+		.mkd-pli-text-holder {
+			display: none;
+		}
+
+		.mkd-pl-standard-pagination {
+			margin: 60px 0 0;
+		}
+	}
+	/***** Specific Global Style - end *****/
+	
+	/***** Portfolio Columns Space - begin *****/
+	
+	$columns_space_label: ('no', 'tiny', 'small', 'normal', 'medium', 'large');
+	$columns_space: (0, 5, 10, 15, 25, 30);
+
+	@for $i from 0 to length($columns_space_label) {
+		&.mkd-pl-#{nth($columns_space_label,$i+1)}-space {
+			$item_space: nth($columns_space, $i+1);
+			$item_bottom_margin: $item_space * 2;
+
+			.mkd-pl-inner {
+				@if($item_space == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$item_space}px;
+				}
+			}
+
+			article {
+				padding: 0 #{$item_space}px;
+				margin: 0 0 #{$item_bottom_margin}px;
+			}
+		}
+	}
+	
+	/***** Portfolio Columns Space - end *****/
+	
+	/***** Portfolio Types - begin *****/
+	
+	&.mkd-pl-gallery {
+		
+		&:not(.mkd-pl-one-column) {
+			
+			article {
+				float: left;
+			}
+		}
+		
+		$gallery_columns_number: ('two', 'three', 'four', 'five');
+		
+		@for $i from 0 to length($gallery_columns_number) {
+			&.mkd-pl-#{nth($gallery_columns_number,$i+1)}-columns {
+				
+				article {
+					width: 100% / ($i+2);
+				}
+				
+				@if ($i > 1) { // set different break point for four and five columns
+					@media only screen and (min-width: $laptop-landscape-plus-pixel) {
+						
+						article {
+							
+							&:nth-child(#{$i+2}n+1) {
+								clear: both;
+							}
+						}
+					}
+				} @else {
+					@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+						
+						article {
+							
+							&:nth-child(#{$i+2}n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&.mkd-pl-masonry {
+		
+		.mkd-pl-inner {
+			opacity: 0;
+		}
+		
+		article,
+		.mkd-pl-grid-sizer {
+			width: 100%;
+		}
+		
+		.mkd-pl-grid-gutter {
+			width: 0;
+		}
+		
+		$masonry_columns_number: ('two', 'three', 'four', 'five');
+		
+		@for $i from 0 to length($masonry_columns_number) {
+			&.mkd-pl-#{nth($masonry_columns_number,$i+1)}-columns {
+				$column_width: 100%/($i+2);
+				
+				article,
+				.mkd-pl-grid-sizer {
+					width: $column_width;
+				}
+				
+				article {
+					
+					&.mkd-pl-masonry-large-width,
+                    &.mkd-pl-masonry-large-width-height {
+						width: $column_width * 2;
+					}
+				}
+			}
+		}
+
+        &.mkd-pl-images-fixed {
+            article {
+                .mkd-pl-item-inner {
+                    height: 100%;
+                    .mkd-pli-image {
+                        height: 100%;
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+	}
+
+	/***** Portfolio Types - end *****/
+
+	/***** Additional Features - begin *****/
+
+	&.mkd-pl-has-animation {
+
+		article {
+			pointer-events:none;
+			opacity: 0;
+			@include mkdTransform(translateY(80px));
+			-webkit-transition: opacity .8s cubic-bezier(0.04, 0.46, 0.25, 1), -webkit-transform 1s cubic-bezier(0.04, 0.46, 0.25, 1);
+			transition: opacity .8s cubic-bezier(0.04, 0.46, 0.25, 1), transform 1s cubic-bezier(0.04, 0.46, 0.25, 1);
+
+			&.mkd-item-show {
+				opacity: 1;
+				@include mkdTransform(translateY(0));
+
+				&.mkd-item-shown {
+					@include mkdTransition(none);
+					pointer-events:auto;
+				}
+			}
+			
+			.touch & {
+				pointer-events:auto;
+				opacity: 1;
+				@include mkdTransform(translateY(0));
+			}
+		}
+	}
+
+	/***** Additional Features - end *****/
+}
+
+/* ==========================================================================
+   Portfolio shortcode style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio filter style - begin
+   ========================================================================== */
+
+.mkd-pl-filter-holder {
+    @include mkdRelativeHolderLayout();
+    margin: 0 0 30px;
+    text-align: center;
+
+    ul {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0 8px;
+	        padding: 0 22px;
+            cursor: pointer;
+	        
+	        @include laptop-landscape-large {
+		        padding: 0 16px;
+	        }
+	
+	        @include ipad-landscape {
+		        padding: 0 10px;
+	        }
+
+            span {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                color: $first-main-color;
+                font-size: 12px;
+				font-weight: 700;
+				letter-spacing: 0.1em;
+                line-height: 22px;
+                white-space: nowrap;
+                @include mkdTransition(color .2s ease-out);
+				text-transform: uppercase;
+            }
+
+            &.mkd-pl-current,
+            &:hover {
+
+                span {
+                    color: $default-text-color;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Portfolio filter style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio standard pagination style - begin
+   ========================================================================== */
+
+.mkd-portfolio-list-holder {
+
+	&.mkd-pl-no-content {
+		.mkd-pl-standard-pagination {
+			margin: 40px 0 0;
+		}
+	}
+	
+	&.mkd-pl-pag-standard {
+		
+		.mkd-pl-inner {
+			opacity: 1;
+			@include mkdTransition(opacity .2s ease-out);
+		}
+		
+		&.mkd-pl-pag-standard-animate {
+			
+			.mkd-pl-inner {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.mkd-pl-standard-pagination {
+	@include mkdRelativeHolderLayout();
+	margin: 21px 0 0;
+	clear: both;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	
+	ul {
+		@include mkdRelativeHolderLayout();
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		text-align: center;
+		
+		li {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 3px;
+			padding: 0;
+			
+			a {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0;
+				padding: 0;
+				color: $default-text-color;
+				font-size: 14px;
+
+				&:hover {
+					color: $first-main-color;
+				}
+			}
+			
+			&.mkd-pl-pag-active {
+				
+				a {
+					color: $first-main-color;
+					font-size: 14px;
+				}
+			}
+			
+			&.mkd-pl-pag-prev,
+			&.mkd-pl-pag-next {
+				
+				a {
+					font-size: 10px;
+					@include mkdTransition(color .2s ease-out, opacity .2s ease-out);
+					color: $first-main-color;
+					font-weight: bold;
+					
+					span {
+						display: block;
+						line-height: inherit;
+						
+						&:before {
+							display: block;
+							line-height: inherit;
+						}
+					}
+				}
+			}
+			
+			&.mkd-pl-pag-prev {
+				
+				a {
+					opacity: 0;
+
+					span {
+						padding-right: 10px;
+					}
+				}
+			}
+			
+			&.mkd-pl-pag-next {
+				
+				a {
+					opacity: 1;
+
+					span {
+						padding-left: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio standard pagination style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio load more pagination style - begin
+   ========================================================================== */
+
+.mkd-pl-load-more-holder {
+	@include mkdRelativeHolderLayout();
+
+    .mkd-pl-load-more {
+	    margin: 40px 0 0;
+	    text-align: center;
+    }
+}
+/* ==========================================================================
+   Portfolio load more pagination style - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Portfolio loading element style - begin
+   ========================================================================== */
+
+.mkd-pl-loading {
+	position: relative;
+	display: none;
+	width: 100%;
+	margin: 40px 0 20px;
+	color: $default-heading-color;
+	text-align: center;
+
+	&.mkd-filter-trigger {
+		position: absolute;
+		top: 250px;
+		left: 0;
+	}
+	
+    &.mkd-standard-pag-trigger {
+		position: absolute;
+		top: 50px;
+		left: 0;
+	
+	    .mkd-pl-has-filter & {
+		    top: 150px;
+	    }
+    }
+
+	&.mkd-showing {
+		display: block;
+	}
+
+	> div {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 14px;
+		height: 14px;
+		margin: 0 3px;
+		background-color: $default-heading-color;
+		border-radius: 100%;
+		@include mkdAnimation(sk-bouncedelay 1.4s infinite ease-in-out both);
+	}
+
+	.mkd-pl-loading-bounce1 {
+		-webkit-animation-delay: -0.32s;
+		-moz-animation-delay: -0.32s;
+		animation-delay: -0.32s;
+	}
+
+	.mkd-pl-loading-bounce2 {
+		-webkit-animation-delay: -0.16s;
+		-moz-animation-delay: -0.16s;
+		animation-delay: -0.16s;
+	}
+}
+
+@-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1.0);
+	}
+}
+
+@-moz-keyframes sk-bouncedelay {
+	0%, 80%, 100% {
+		-moz-transform: scale(0);
+	}
+	40% {
+		-moz-transform: scale(1.0);
+	}
+}
+
+@keyframes sk-bouncedelay {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}
+/* ==========================================================================
+   Portfolio loading element style - end
+   ========================================================================== */

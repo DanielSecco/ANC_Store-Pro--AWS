@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Tabs shortcode style - begin
+   ========================================================================== */
+
+.mkd-tabs {
+	@include mkdRelativeHolderLayout();
+	
+	.mkd-tabs-nav {
+		@include mkdRelativeHolderLayout();
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		li {
+			float: left;
+			margin: 0;
+			padding: 0;
+			
+			a {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				box-sizing: border-box;
+				@include mkdTransition(color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out);
+				text-transform: uppercase;
+			}
+		}
+	}
+	
+	.mkd-tab-container {
+		@include mkdRelativeHolderLayout();
+		
+		p {
+			margin: 0;
+		}
+	}
+	
+	&.mkd-tabs-standard {
+		
+		.mkd-tabs-nav {
+			
+			li {
+
+				padding-right: 15px;
+				
+				a {
+					padding: 6px 50px;
+					font-size: 12px;
+					line-height: 47px;
+					font-weight: 700;
+					letter-spacing: 0.1em;
+					color: $default-heading-color;
+					background-color: #fff;
+					border: 1px solid #e8e8e8;
+				}
+				
+				&.ui-state-active a,
+				&.ui-state-hover a {
+					color: #fff;
+					background-color: $first-main-color;
+					border:  1px solid $first-main-color;
+				}
+			}
+		}
+		
+		.mkd-tab-container {
+			margin: 35px 0 0;
+		}
+	}
+	
+	&.mkd-tabs-boxed {
+		
+		.mkd-tabs-nav {
+			
+			li {
+				margin: 0 15px 0 0;
+				
+				a {
+					padding: 6px 32px;
+					font-size: 12px;
+					line-height: 47px;
+					font-weight: 700;
+					letter-spacing: 0.1em;
+					color: $default-heading-color;
+					background-color: #e8e8e8;
+				}
+				
+				&.ui-state-active a,
+				&.ui-state-hover a {
+					color: #fff;
+					background-color: $first-main-color;
+				}
+				
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+		
+		.mkd-tab-container {
+			margin: 25px 0 0;
+		}
+	}
+	
+	&.mkd-tabs-simple {
+		
+		.mkd-tabs-nav {
+			border-bottom: 1px solid $default-border-color;
+			
+			li {
+				margin: 0 31px 0 0;
+				
+				a {
+					padding: 13px 0;
+					font-size: 18px;
+					line-height: 26px;
+					font-weight: 400;
+					color: $default-text-color;
+				}
+				
+				&.ui-state-active a,
+				&.ui-state-hover a {
+					color: $default-heading-color;
+				}
+				
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+		
+		.mkd-tab-container {
+			padding: 31px 0;
+			border-bottom: 1px solid $default-border-color;
+		}
+	}
+	
+	&.mkd-tabs-vertical {
+		
+		.mkd-tabs-nav {
+			display: table-cell;
+			vertical-align: top;
+			width: 140px;
+			height: 100%;
+			border-right: 1px solid $default-border-color;
+			box-sizing: border-box;
+			
+			li {
+				display: block;
+				float: none;
+				margin: 0 0 24px;
+				
+				a {
+					font-size: 18px;
+					line-height: 26px;
+					font-weight: 400;
+					color: $default-text-color;
+				}
+				
+				&.ui-state-active a,
+				&.ui-state-hover a {
+					color: $default-heading-color;
+				}
+				
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+		
+		.mkd-tab-container {
+			display: table-cell;
+			vertical-align: top;
+			width: calc(100% - 140px);
+			height: 100%;
+			padding: 0 0 0 45px;
+			box-sizing: border-box;
+		}
+	}
+}
+/* ==========================================================================
+   Tabs shortcode style - end
+   ========================================================================== */

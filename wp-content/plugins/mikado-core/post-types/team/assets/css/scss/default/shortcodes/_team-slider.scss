@@ -1,0 +1,80 @@
+/* ==========================================================================
+# Team Slider styles - begin
+========================================================================== */
+.mkd-team-slider-holder {
+
+	.mkd-tl-inner {
+		visibility: hidden;
+			.mkd-team {
+				margin-bottom: 0;
+				float: none;
+
+				&.info-bellow {
+					&.circle {
+						.mkd-team-image {
+							box-sizing: border-box;
+							padding: 0 27%;
+							@include ipad-landscape {
+								padding: 0 14%;
+							}
+						}
+					}
+				}
+			}
+
+		.owl-nav {
+			display: none;
+		}
+
+		.owl-dots {
+			text-align: center;
+			margin: 25px 0 0;
+
+			.owl-dot {
+				display: inline-block;
+				vertical-align: middle;
+
+				&:not(.active) {
+					span {
+						display: inline-block;
+						vertical-align: middle;
+						width: 8px;
+						height: 8px;
+						height: 8px;
+						margin: 0 6px;
+						border-radius: 50%;
+						background-color: #000;
+						@include mkdTransition(background-color .2s ease-out, border .2s ease-out);
+						box-sizing: border-box;
+					}
+				}
+
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					width: 12px;
+					height: 12px;
+					margin: 0 6px;
+					border-radius: 3em;
+					background-color: transparent;
+					border: 2px solid rgba($default-heading-color, .5);
+					@include mkdTransition(background-color .2s ease-out, border .2s ease-out);
+					box-sizing: border-box;
+				}
+
+				&:hover,
+				&.active {
+
+					span {
+						background-color: $default-heading-color;
+						border-color: $default-heading-color;
+					}
+				}
+			}
+		}
+
+	}
+}
+/* ==========================================================================
+# Team Slider styles - end
+========================================================================== */

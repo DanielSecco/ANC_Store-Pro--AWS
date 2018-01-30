@@ -1,0 +1,23 @@
+/* ==========================================================================
+# Team responsive style - begin
+========================================================================== */
+
+@media only screen and (max-width: $ipad-landscape-plus-pixel) {
+	.mkd-team {
+		&.info-bellow .mkd-team-image {
+			width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: $ipad-portrait) {
+	.mkd-team {
+		&.info-hover {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+/* ==========================================================================
+# Team responsive style - end
+========================================================================== */

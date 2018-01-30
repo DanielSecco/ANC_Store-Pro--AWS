@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Countdown shortcode style - begin
+   ========================================================================== */
+
+.mkd-countdown {
+	@include mkdRelativeHolderLayout();
+	
+	.countdown-rtl {
+		direction: rtl;
+	}
+	
+	.countdown-row {
+		@include mkdRelativeHolderLayout();
+		text-align: center;
+		clear: both;
+		
+		&.countdown-show1 .countdown-section {
+			width: 100%;
+		}
+		&.countdown-show2 .countdown-section {
+			width: 50%;
+		}
+		&.countdown-show3 .countdown-section {
+			width: 33.33333333333333%;
+		}
+		&.countdown-show4 .countdown-section {
+			width: 25%;
+		}
+		&.countdown-show5 .countdown-section {
+			width: 20%;
+		}
+		
+		.countdown-section {
+			@include mkdRelativeHolderLayout();
+			padding: 0 5px;
+			box-sizing: border-box;
+			
+			.countdown-amount {
+				position: relative;
+				display: block;
+				color: $default-heading-color;
+				font-size: 36px;
+				line-height: 36px;
+				letter-spacing: 0.1em;
+				font-weight: 300;
+			}
+			
+			.countdown-period {
+				display: block;
+				font-size: 14px;
+				line-height: 40px;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: $first-main-color;
+				padding-top: 6px;
+			}
+		}
+	}
+	
+	&.mkd-dark-skin {
+		
+		.countdown-row {
+			
+			.countdown-section {
+				
+				.countdown-amount,
+				.countdown-period {
+					color: $first-main-color;
+				}
+			}
+		}
+	}
+	
+	&.mkd-light-skin {
+		
+		.countdown-row {
+			
+			.countdown-section {
+				
+				.countdown-amount,
+				.countdown-period {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Countdown shortcode style - end
+   ========================================================================== */

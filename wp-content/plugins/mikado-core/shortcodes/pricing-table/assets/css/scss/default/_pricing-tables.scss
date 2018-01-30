@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Pricing Tables shortcode style - begin
+   ========================================================================== */
+
+.mkd-pricing-tables {
+    @include mkdRelativeHolderLayout();
+    clear: both;
+	
+	.mkd-pt-wrapper {
+        position: relative;
+    }
+    
+    $pricing_table_space_label: ('no', 'tiny', 'small', 'normal');
+    $pricing_table_space_width: (0, 5, 10, 15);
+    
+    @for $i from 0 to length($pricing_table_space_label) {
+        &.mkd-pt-#{nth($pricing_table_space_label,$i+1)}-space {
+            $column_width: nth($pricing_table_space_width,$i+1);
+            $column_width_margin: $column_width * 2;
+	
+	        .mkd-pt-wrapper {
+		        @if($column_width == 0) {
+			        margin: 0;
+		        } @else {
+			        margin: 0 -#{$column_width}px;
+		        }
+	        }
+	
+	        .mkd-price-table {
+                padding: 0 #{$column_width}px;
+                margin: 0 0 #{$column_width_margin}px;
+            }
+        }
+    }
+	
+	$pricing_table_columns: ('mkd-two-columns', 'mkd-three-columns', 'mkd-four-columns', 'mkd-five-columns');
+    @for $i from 0 to length($pricing_table_columns) {
+        &.#{nth($pricing_table_columns, $i+1)} {
+            $column_width: 100%/($i+2);
+	
+	        .mkd-price-table {
+                width: $column_width;
+            }
+        }
+    }
+}
+
+.mkd-price-table {
+    position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	float: left;
+    box-sizing: border-box;
+
+    .mkd-pt-inner {
+        @include mkdRelativeHolderLayout();
+        background-color: #f7f7f7;
+        border: 1px solid #e6e6e6;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0;
+                padding: 17px 30px;
+                text-align: center;
+
+                &.mkd-pt-title-holder {
+                    position: relative;
+                    color: $default-heading-color;
+                    font-size: 18px;
+                    line-height: 26px;
+                    font-weight: 600;
+	                letter-spacing: 1px;
+                    padding-bottom: 4px;
+	                
+                    .mkd-pt-title {
+                        display: block;
+	                    padding: 17px 0 16px;
+                        padding-top: 30px;
+                        padding-bottom: 0px;
+	                    box-sizing: border-box;
+                        font-weight: 700;
+                        font-size: 30px;
+                        line-height: 51px;
+                        letter-spacing: 0.1em;
+                        color: $default-heading-color;
+                    }
+                }
+
+                &.mkd-pt-subtitle-holder {
+                    position: relative;
+                    color: $default-heading-color;
+                    font-size: 18px;
+                    line-height: 26px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    padding-bottom: 5px;
+
+                    .mkd-pt-subtitle {
+                      display: block;
+                      padding: 17px 0 32px;
+                      padding-bottom: 0px;
+                      box-sizing: border-box;
+                      font-weight: 400;
+                      font-size: 20px;
+                      line-height: 31px;
+                      letter-spacing: 0.1em;
+                      color: $default-text-color;
+
+                      &:after {
+                        content: ' ';
+                        display: block;
+                        margin: 20px auto;
+                        margin-top: 34px;
+                        width: 60%;
+                        border-bottom: 1px solid #e6e6e6;
+                      }
+
+                    }
+                }
+
+                &.mkd-pt-prices {
+                    position: relative;
+					padding: 33px 15px 0;
+                    padding-top: 0;
+	                
+                    .mkd-pt-value {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: 30px;
+                        line-height: 47px;
+                        letter-spacing: 0.1em;
+                        font-weight: 100;
+                        font-family: $alternative-text-font;
+                        color: #323232;
+                    }
+
+                    .mkd-pt-price {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: middle;
+	                    left: -5px;
+                        font-size: 30px;
+                        line-height: 47px;
+                        letter-spacing: 0.1em;
+                        font-weight: 100;
+                        font-family: $alternative-text-font;
+                        color: #323232;
+                    }
+
+                    .mkd-pt-mark {
+                        position: relative;
+                        display: block;
+	                    margin: 1px 0 0;
+                    }
+                }
+
+                &.mkd-pt-content {
+	                padding: 16px 15px;
+                    padding-top: 6px;
+
+                    ul li {
+                      padding-top: 10px;
+                      padding-bottom: 10px;
+                      font-size: 16px;
+                      line-height: 25px;
+                      color: $default-text-color;
+
+                      &:before {
+                        content: "\4e";
+                        font-family: 'ElegantIcons';
+                        font-size: 18px;
+                        letter-spacing: 0.14em;
+                        color: $first-main-color;
+                        margin-right: 5px;
+                        position: relative;
+                        top: 2px;
+
+                      }
+
+                    }
+                }
+
+                &.mkd-pt-button {
+                    padding: 38px 15px 50px;
+
+                    .mkd-btn {
+                      padding-top: 16px;
+                      padding-bottom: 16px;
+
+                      .mkd-btn-text {
+                        font-size: 12px;
+                        font-weight: 700;
+                        letter-spacing: 0.15;
+                      }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Pricing Tables shortcode style - end
+   ========================================================================== */

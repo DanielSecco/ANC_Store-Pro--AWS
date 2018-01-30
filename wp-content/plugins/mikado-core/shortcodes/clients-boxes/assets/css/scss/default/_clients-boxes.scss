@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Clients Boxes shortcode style - begin
+   ========================================================================== */
+
+.mkd-clients-boxes-holder {
+	@include mkdRelativeHolderLayout();
+
+	$columns: ('three', 'four');
+	@for $i from 0 to length($columns) {
+		&.mkd-cb-columns-#{nth($columns, $i+1)} {
+			$column_width: 100%/($i+3);
+
+			.mkd-cb-item {
+				width: $column_width;
+
+				@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+
+					@if ($i == 0) {
+
+						&:nth-child(3n) {
+
+							.mkd-cb-item-inner {
+
+								&:before {
+									display: none;
+								}
+							}
+						}
+
+						&:nth-last-child(-n+3) {
+							margin: 0;
+
+							.mkd-cb-item-inner {
+								margin: 0;
+
+								&:after {
+									display: none;
+								}
+							}
+						}
+
+					} @else if ($i == 1) {
+
+						&:nth-child(4n) {
+
+							.mkd-cb-item-inner {
+
+								&:before {
+									display: none;
+								}
+							}
+						}
+
+						&:nth-last-child(-n+4) {
+							margin: 0;
+
+							.mkd-cb-item-inner {
+								margin: 0;
+
+								&:after {
+									display: none;
+								}
+							}
+						}
+					}
+
+					&:nth-child(#{$i+3}n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+
+	.mkd-cb-inner {
+		margin: 0 -33px;
+	}
+
+	.mkd-cb-item {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		float: left;
+		padding: 0 33px;
+		margin: 0 0 34px;
+		box-sizing:border-box;
+
+		.touch & {
+			cursor: pointer;
+		}
+
+		.mkd-cb-item-inner {
+			@include mkdRelativeHolderLayout();
+			margin: 0 0 33px;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				background-color: rgba(215, 215, 215, 0.4);
+			}
+
+			&:before {
+				top: 0;
+				right: -34px;
+				width: 1px;
+				height: 100%;
+			}
+
+			&:after {
+				bottom: -34px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+			}
+		}
+
+		.mkd-cb-link {
+			position: relative;
+			display: block;
+		}
+	}
+
+	/***** Hover Types - begin *****/
+
+	&.mkd-cb-hover-switch-images {
+
+		.mkd-cb-item {
+
+			&:hover {
+
+				.mkd-cb-image {
+					opacity: 0;
+				}
+
+				.mkd-cb-hover-image {
+					opacity: 1;
+				}
+			}
+
+			.mkd-cb-image {
+				position: relative;
+				display: block;
+				width: auto;
+				margin: 0 auto;
+				opacity: 1;
+				@include mkdTransition(opacity .15s ease-out);
+			}
+
+			.mkd-cb-hover-image {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: auto;
+				opacity: 0;
+				@include mkdTransform(translateX(-50%));
+				@include mkdTransition(opacity .15s ease-out);
+			}
+		}
+	}
+
+	&.mkd-cb-hover-roll-over {
+
+		.mkd-cb-item {
+
+			&:hover {
+
+				.mkd-cb-image {
+					opacity: 0;
+					@include mkdTransform(translateX(100%));
+				}
+
+				.mkd-cb-hover-image {
+					opacity: 1;
+					@include mkdTransform(translate(-50%, -50%));
+				}
+			}
+
+			.mkd-cb-item-inner,
+			.mkd-cb-link {
+				overflow: hidden;
+			}
+
+			.mkd-cb-image {
+				position: relative;
+				display: block;
+				width: auto;
+				margin: 0 auto;
+				opacity: 1;
+				@include mkdTransition(all .6s ease);
+			}
+
+			.mkd-cb-hover-image {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: auto;
+				opacity: 0;
+				@include mkdTransition(all .6s ease);
+				@include mkdTransform(translate(-150%, -50%));
+			}
+		}
+	}
+
+	/***** Hover Types - end *****/
+}
+
+/* ==========================================================================
+   Clients Boxes shortcode style - end
+   ========================================================================== */

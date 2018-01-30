@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Icon With Text shortcode responsive style - begin
+   ========================================================================== */
+
+@include phone-portrait {
+
+	.mkd-iwt {
+
+		&.mkd-iwt-icon-left {
+
+			.mkd-iwt-icon,
+			.mkd-iwt-content {
+				display: block;
+			}
+
+			.mkd-iwt-icon {
+				top: 0;
+				right: 0;
+				margin-bottom: 18px;
+			}
+
+			.mkd-iwt-content {
+				padding: 0;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Icon With Text shortcode responsive style - end
+   ========================================================================== */

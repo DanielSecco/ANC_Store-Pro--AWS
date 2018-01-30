@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Portfolio Single - Small Gallery layout style - begin
+   ========================================================================== */
+
+.mkd-portfolio-single-holder {
+    
+    &.mkd-ps-small-gallery-layout {
+
+        .mkd-portfolio-single-likes {
+            display: inline-block;
+            padding-top: 31px;
+            a {
+                padding-right: 10px;
+                i {
+                    font-size: 13px;
+                }
+
+                span {
+                    font-size: 12px;
+                    color: $first-main-color;
+                    letter-spacing: 0.1em;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    padding-left: 11px;
+
+                    &:nth-child(3) {
+                        padding-left: 5px;
+
+                        &:after {
+                            content: "";
+                            border-right: 1px solid #d3d3d3;
+                            padding-left: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .mkd-ps-image-holder {
+            width: 100%;
+            padding-right: 13%;
+            box-sizing: border-box;
+        
+            .mkd-ps-image {
+                float: left;
+            
+                a {
+	                
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin: -19px 0 0 -19px;
+                        content: '\4c';
+                        font-family: 'ElegantIcons';
+                        speak: none;
+                        color: #fff;
+                        font-size: 38px;
+                        line-height: 1;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-variant: normal;
+                        -webkit-font-smoothing: antialiased;
+                        z-index: 2;
+                        opacity: 0;
+                        @include mkdTransition(opacity .2s ease-in-out);
+                    }
+                
+                    &:after {
+                        @include mkdAbsoluteHolderLayout();
+                        content: '';
+                        background-color: rgba($first-main-color, 0.7);
+                        opacity: 0;
+                        @include mkdTransition(opacity .2s ease-in-out);
+                    }
+                
+                    &:hover {
+                    
+                        &:before,
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mkd-ps-content-item {
+            margin: 0 0 30px;
+
+            h2 {
+                margin-top: -5px;
+                margin-bottom: 5px;
+                letter-spacing: 0.1em;
+                line-height: 40px;
+            }
+
+            p {
+                color: $default-text-color;
+                font-size: 20px;
+                letter-spacing: 0;
+                font-weight: 300;
+                line-height: 31px;
+
+            }
+        }
+
+        .mkd-ps-info-item {
+
+            &.mkd-ps-date {
+                margin-top: 6px;
+
+                h5,
+                p {
+                    display: inline-block;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #b1b1b1;
+                }
+
+                h5 {
+                    text-transform: none;
+                    letter-spacing: 0;
+                }
+            }
+
+
+            &.mkd-ps-custom-field {
+                margin-top: 5px;
+                margin-bottom: 3px;
+
+                h5,
+                p {
+                    display: inline-block;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #b1b1b1;
+                }
+
+                h5 {
+                    text-transform: none;
+                    letter-spacing: 0;
+                }
+            }
+
+            &.mkd-ps-social-share {
+                display: inline;
+
+                &:before {
+                    content: "SHARE";
+                    font-size: 12px;
+                    color: $first-main-color;
+                    letter-spacing: 0.1em;
+                    font-weight: bold;
+                    line-height: 25px;
+                    position: relative;
+                    bottom: 1px;
+                    padding-right: 15px;
+                }
+            }
+        }
+
+    }
+}
+
+@include laptop-landscape-medium {
+
+    .mkd-portfolio-single-holder {
+
+        &.mkd-ps-small-gallery-layout {
+
+            .mkd-ps-image-holder {
+                padding-right: 7%;
+            }
+
+        }
+    }
+}
+
+
+@include ipad-landscape {
+
+    .mkd-portfolio-single-holder {
+
+        &.mkd-ps-small-gallery-layout {
+
+            .mkd-ps-image-holder {
+                padding-right: 0;
+            }
+
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio Single - Small Gallery layout style - end
+   ========================================================================== */

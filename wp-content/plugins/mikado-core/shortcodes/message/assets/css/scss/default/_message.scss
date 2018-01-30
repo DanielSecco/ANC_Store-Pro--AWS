@@ -1,0 +1,100 @@
+/* ==========================================================================
+# Message style - begin
+========================================================================== */
+/* Unique style for both types  - begin
+========================================================================== */
+.mkd-message{
+  position: relative;
+  padding: 12px 27px;
+  margin: 0;
+  background-color: $first-main-color;
+  border: 0 solid $first-main-color;
+  @media only screen and (max-width: 480px){
+    padding: 20px 22px;
+  }
+  .mkd-message-inner{
+    position: relative;
+    padding-right: 20px;
+
+    .mkd-message-text{
+      display: table;
+      height: 100%;
+      @media screen and (max-width: 320px) {
+        line-height: normal !important;
+      }
+      .mkd-message-text-inner{
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+        font-family: Catamaran, sans-serif;
+        color: #fff;
+        font-weight: 500;
+        font-style: normal;
+        position: relative;
+        left: -14px;
+        line-height: 29px;
+      }
+    }
+
+    a.mkd-close{
+      position: absolute;
+      right: -12px;
+      top: 7px;
+      line-height: 13px;
+      font-size: 18px;
+      color: $first-main-color;
+
+      i{
+        width: 14px;
+        height: 14px;
+        color: #fff;
+        font-weight: 700;
+        display: inline-block;
+
+        &:hover{
+          color: $default-text-color !important;
+        }
+      }
+    }
+  }
+}
+/* Unique style for both types - end
+========================================================================== */
+
+/* Type with icon - begin
+========================================================================== */
+.mkd-message.mkd-with-icon{
+  .mkd-message-icon-holder{
+    float: left;
+    padding: 0 20px 0 0;
+    margin-left: -21px;
+    margin-top: 2px;
+    @media only screen and (max-width: 600px){
+      padding: 20px 22px;
+    }
+    .mkd-message-icon{
+      display: table;
+      height: 100%;
+      color: #fff;
+      .mkd-message-icon-inner{
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 400;
+        >i,
+        >span{
+          line-height: 1em;
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+/* Type with icon - end
+========================================================================== 
+/* ==========================================================================
+# Message style - end
+========================================================================== */

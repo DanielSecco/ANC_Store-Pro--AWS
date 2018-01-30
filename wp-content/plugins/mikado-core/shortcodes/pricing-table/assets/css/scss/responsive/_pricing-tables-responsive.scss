@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Pricing Tables shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-medium {
+	.mkd-price-table {
+
+		.mkd-pt-inner {
+
+			ul {
+				li {
+					&.mkd-pt-button {
+						.mkd-btn {
+							padding: 16px 46px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include laptop-landscape {
+	
+	.mkd-pricing-tables {
+		
+		$pricing_table_columns: ('mkd-five-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				$column_width: 100%/3;
+				
+				.mkd-price-table {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+						
+						&:nth-child(3n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-landscape {
+	
+	.mkd-pricing-tables {
+		
+		$pricing_table_columns: ('mkd-four-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				$column_width: 100%/2;
+				
+				.mkd-price-table {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+						
+						&:nth-child(2n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-landscape {
+	
+	.mkd-price-table {
+		
+		.mkd-pt-inner {
+			
+			ul {
+				
+				li {
+					padding: 12px 20px;
+					
+					&.mkd-pt-title-holder {
+						
+						.mkd-pt-title {
+							padding: 17px 0 16px;
+							padding-top: 30px;
+							padding-bottom: 0px;
+						}
+					}
+					
+					&.mkd-pt-prices {
+						padding: 15px 10px 0;
+					}
+					
+					&.mkd-pt-content {
+						padding: 12px 10px;
+					}
+					
+					&.mkd-pt-button {
+						padding: 18px 15px 50px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+	
+	.mkd-pricing-tables {
+		
+		$pricing_table_columns: ('mkd-three-columns', 'mkd-four-columns', 'mkd-five-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				$column_width: 100%/2;
+				
+				.mkd-price-table {
+					width: $column_width;
+						
+					&:nth-child(2n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	
+	.mkd-pricing-tables {
+		
+		$pricing_table_columns: ('mkd-two-columns', 'mkd-three-columns', 'mkd-four-columns', 'mkd-five-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				
+				.mkd-price-table {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Pricing Tables shortcode responsive style - end
+   ========================================================================== */

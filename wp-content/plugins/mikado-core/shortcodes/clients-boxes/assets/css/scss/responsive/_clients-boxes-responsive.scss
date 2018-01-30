@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Clients Boxes shortcode responsive style - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+	
+	.mkd-clients-boxes-holder {
+		
+		.mkd-cb-inner {
+			margin: 0 -24px;
+		}
+		
+		.mkd-cb-item {
+			padding: 0 24px;
+			margin: 0 0 25px;
+			
+			
+			.mkd-cb-item-inner {
+				margin: 0 0 24px;
+				
+				&:before {
+					right: -24px;
+				}
+				
+				&:after {
+					bottom: -24px;
+				}
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+
+	.mkd-clients-boxes-holder {
+	
+		$columns: ('three', 'four');
+		@for $i from 0 to length($columns) {
+			&.mkd-cb-columns-#{nth($columns, $i+1)} {
+				
+				.mkd-cb-item {
+					width: 50%;
+					
+					@media only screen and (min-width: $phone-portrait-plus-pixel) {
+						
+						&:nth-child(2n) {
+							
+							.mkd-cb-item-inner {
+								
+								&:before {
+									display: none;
+								}
+							}
+						}
+						
+						&:nth-last-child(-n+2) {
+							margin: 0;
+							
+							.mkd-cb-item-inner {
+								margin: 0;
+								
+								&:after {
+									display: none;
+								}
+							}
+						}
+						
+						&:nth-child(2n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include phone-portrait {
+	
+	.mkd-clients-boxes-holder {
+		
+		$columns: ('three', 'four');
+		@for $i from 0 to length($columns) {
+			&.mkd-cb-columns-#{nth($columns, $i+1)} {
+				
+				.mkd-cb-item {
+					width: 100%;
+				}
+			}
+		}
+		
+		.mkd-cb-inner {
+			margin: 0;
+		}
+		
+		.mkd-cb-item {
+			padding: 0;
+			
+			.mkd-cb-item-inner {
+				
+				&:before {
+					display: none;
+				}
+			}
+			
+			&:nth-last-child(-n+1) {
+				
+				.mkd-cb-item-inner {
+					
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Clients Boxes shortcode responsive style - end
+   ========================================================================== */

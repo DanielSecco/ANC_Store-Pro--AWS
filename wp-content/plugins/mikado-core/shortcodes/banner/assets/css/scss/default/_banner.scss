@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+
+.mkd-banner-holder {
+    @include mkdRelativeHolderLayout();
+	
+	.mkd-banner-image {
+		@include mkdRelativeHolderLayout();
+		
+		img {
+			display: block;
+		}
+	}
+	
+	.mkd-banner-text-holder {
+		@include mkdAbsoluteHolderLayout();
+	}
+	
+	.mkd-banner-text-inner {
+		@include mkdRelativeHolderLayout();
+		height: 100%;
+		box-sizing: border-box;
+		position: absolute;
+		top: 20px;
+		left: 25px;
+	}
+	
+	.mkd-banner-subtitle {
+		margin: 0;
+	}
+	
+	.mkd-banner-title {
+		position: relative;
+		overflow: hidden;
+		margin: 4px 0 0;
+		@include mkdTransition(all .2s);
+
+		&:before {
+			content: "\e87a";
+			font-family: 'Linearicons-Free';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-size: 13px;
+			position: absolute;
+			top: 50%;
+			left: -15px;
+			opacity: 0;
+			@include mkdTransform(translateY(-60%));
+			@include mkdTransition(left .2s cubic-bezier(.54,.49,0,1.75), opacity .0s .2s);
+		}
+	}
+	
+	.mkd-banner-text {
+		margin: 6px 0 0;
+		line-height: 1em;
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+	}
+
+	.mkd-banner-link {
+		@include mkdAbsoluteHolderLayout();
+		z-index: 1;
+	}
+
+	&:hover {
+		.mkd-banner-title {
+			padding-left:20px;
+
+			&:before {
+				opacity: 1;
+			    left: 0px;
+                @include mkdTransition(left .3s cubic-bezier(.54,.49,0,1.75));
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */

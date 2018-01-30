@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Elements Holder shortcode style - begin
+   ========================================================================== */
+
+.mkd-elements-holder {
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+
+	&.mkd-two-columns {
+
+		.mkd-eh-item {
+			width: 50%;
+		}
+	}
+
+	&.mkd-three-columns {
+
+		.mkd-eh-item {
+			width: 33%;
+		}
+	}
+
+	&.mkd-four-columns {
+
+		.mkd-eh-item {
+			width: 25%;
+		}
+	}
+
+	&.mkd-five-columns {
+
+		.mkd-eh-item {
+			width: 20%;
+		}
+	}
+
+	&.mkd-six-columns {
+
+		.mkd-eh-item {
+			width: 16%;
+		}
+	}
+
+	.mkd-eh-item {
+		display: table-cell;
+		vertical-align: middle;
+		height: 100%;
+		background-position: center;
+		background-size: cover;
+
+		&.mkd-vertical-alignment-top {
+			vertical-align: top;
+		}
+
+		&.mkd-vertical-alignment-bottom {
+			vertical-align: bottom;
+		}
+
+		&.mkd-horizontal-alignment-center {
+			text-align: center;
+		}
+
+		&.mkd-horizontal-alignment-right {
+			text-align: right;
+		}
+
+		.mkd-elements-holder-item-inner {
+			width: 100%;
+		}
+	}
+
+	&.mkd-ehi-float {
+
+		&.mkd-three-columns {
+
+			.mkd-eh-item {
+				width: 33.33333333333333%;
+			}
+		}
+
+		&.mkd-six-columns {
+
+			.mkd-eh-item {
+				width: 16.66666666666667%;
+			}
+		}
+
+		.mkd-eh-item {
+			float:left;
+		}
+	}
+
+	.mkd-ehi-content {
+		padding: 0 20px;
+	}
+}
+/* ==========================================================================
+   Elements Holder shortcode style - end
+   ========================================================================== */

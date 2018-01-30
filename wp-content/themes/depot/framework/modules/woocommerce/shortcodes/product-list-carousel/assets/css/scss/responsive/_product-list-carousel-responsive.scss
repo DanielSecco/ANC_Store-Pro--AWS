@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Product List - Carousel shortcode responsive styles - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+    
+    .mkd-plc-holder {
+
+        &.mkd-simple-type {
+        
+            .mkd-plc-image-outer,
+            .mkd-plc-text-wrapper {
+                display: inline-block;
+                width: 100%;
+                padding: 0;
+            }
+
+            .mkd-plc-text-wrapper {
+                margin: 30px 0 40px;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Product List - Carousel shortcode responsive styles - end
+   ========================================================================== */

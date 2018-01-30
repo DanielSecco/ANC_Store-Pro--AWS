@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Pricing Item shortcode style - begin
+   ========================================================================== */
+
+.mkd-price-item {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-top: 20px;
+  box-sizing: border-box;
+
+  .mkd-pi-inner {
+    @include mkdRelativeHolderLayout();
+
+
+    .mkd-pi-prices {
+      position: relative;
+      float: left;
+      padding-right: 37px;
+      width: 35%;
+      box-sizing: border-box;
+      text-align: right;
+
+      .mkd-pi-price {
+
+      display: inline-block;
+      font-size: 123px;
+        font-weight: 100;
+        margin: 0;
+        padding-top: 10px;
+        position: relative;
+        vertical-align: top;
+        color: #323232;
+
+      }
+
+      .mkd-pi-currency {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        font-size: 30px;
+        font-family: $alternative-text-font;
+        font-weight: 100;
+        letter-spacing: 0.1em;
+        color: #323232;
+        top: -20px;
+
+      }
+
+    }
+
+    .mkd-pi-content-holder {
+      float: left;
+      width: 65%;
+      position: relative;
+      text-align: left;
+        .mkd-pi-title {
+          position: relative;
+          top: -39px;
+          margin-top: 0;
+          margin-bottom: 0;
+          letter-spacing: 0.1em;
+          line-height: 51px;
+        }
+
+        .mkd-pi-subtitle {
+          position: relative;
+          top: -40px;
+          margin-top: 0;
+          font-size: 20px;
+          line-height: 31px;
+          color: $default-text-color;
+        }
+
+        .mkd-pi-content {
+          position: relative;
+          top: -42px;
+        }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0;
+        font-size: 16px;
+        color: $default-text-color;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+
+        &:before {
+          content: "\4e";
+          font-family: 'ElegantIcons';
+          font-size: 18px;
+          letter-spacing: 0.14em;
+          color: $first-main-color;
+          margin-right: 5px;
+          position: relative;
+          top: 2px;
+
+        }
+
+      }
+    }
+  }
+}
+/* ==========================================================================
+   Pricing item shortcode style - end
+   ========================================================================== */

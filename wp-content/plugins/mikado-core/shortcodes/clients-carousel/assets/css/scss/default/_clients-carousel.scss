@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Clients Carousel shortcode style - begin
+   ========================================================================== */
+
+.mkd-clients-carousel-holder {
+    @include mkdRelativeHolderLayout();
+
+	.mkd-cc-inner {
+		@include mkdRelativeHolderLayout();
+		visibility: hidden;
+
+		.owl-nav {
+			display: none;
+		}
+
+		display: none;
+		width: 100%;
+		-webkit-tap-highlight-color: transparent;
+		position: relative;
+		z-index: 1;
+
+		&.owl-loaded {
+			display: block;
+		}
+
+		&.owl-loading {
+			opacity: 0;
+			display: block;
+		}
+
+		&.owl-hidden {
+			opacity: 0;
+		}
+
+		&.owl-refresh .owl-item {
+			visibility: hidden;
+		}
+
+		&.owl-drag .owl-item {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		&.owl-grab {
+			cursor: move;
+			cursor: grab;
+		}
+
+		&.owl-rtl {
+			direction: rtl;
+
+			.owl-item {
+				float: right;
+			}
+		}
+
+		/* No Js */
+		.no-js & {
+			display: block;
+		}
+
+		.owl-stage {
+			position: relative;
+			-ms-touch-action: pan-Y;
+
+			&:after {
+				content: ".";
+				display: block;
+				clear: both;
+				visibility: hidden;
+				line-height: 0;
+				height: 0;
+			}
+		}
+
+		.owl-stage-outer {
+			position: relative;
+			overflow: hidden;
+			/* fix for flashing background */
+			-webkit-transform: translate3d(0px, 0px, 0px);
+		}
+
+		.owl-wrapper,
+		.owl-item {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+		}
+
+		.owl-item {
+			position: relative;
+			min-height: 1px;
+			float: left;
+			-webkit-backface-visibility: hidden;
+			-webkit-tap-highlight-color: transparent;
+			-webkit-touch-callout: none;
+
+			img {
+				display: block;
+				width: 100%;
+
+				.owl-lazy {
+					-webkit-transform-style: preserve-3d;
+					transform-style: preserve-3d;
+				}
+			}
+
+			.owl-lazy {
+				opacity: 0;
+				transition: opacity 400ms ease;
+			}
+		}
+
+		.owl-nav {
+
+			&.disabled {
+				display: none;
+			}
+
+			.owl-prev,
+			.owl-next {
+				cursor: pointer;
+				cursor: hand;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		}
+
+		.owl-dots {
+
+			&.disabled {
+				display: none;
+			}
+
+			.owl-dot {
+				cursor: pointer;
+				cursor: hand;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		}
+
+		/*
+         *  Owl Carousel - Animate Plugin
+         */
+		.animated {
+			-webkit-animation-duration: 1000ms;
+			animation-duration: 1000ms;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.owl-animated-in {
+			z-index: 0;
+		}
+
+		.owl-animated-out {
+			z-index: 1;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+	}
+	
+	.mkd-cc-item {
+		@include mkdRelativeHolderLayout();
+		
+		.touch & {
+			cursor: pointer;
+		}
+		
+		.mkd-cc-item {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	/***** Hover Types - begin *****/
+	
+	&.mkd-cc-hover-switch-images {
+		
+		.mkd-cc-item {
+			
+			&:hover {
+				
+				.mkd-cc-image {
+					opacity: 0;
+				}
+				
+				.mkd-cc-hover-image {
+					opacity: 1;
+				}
+			}
+			
+			.mkd-cc-image {
+				position: relative;
+				display: block;
+				width: auto;
+				margin: 0 auto;
+				opacity: 1;
+				@include mkdTransition(opacity .15s ease-out);
+			}
+			
+			.mkd-cc-hover-image {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				width: auto;
+				opacity: 0;
+				@include mkdTransform(translateX(-50%));
+				@include mkdTransition(opacity .15s ease-out);
+			}
+		}
+	}
+	
+	&.mkd-cc-hover-roll-over {
+		
+		.mkd-cc-item {
+			overflow: hidden;
+			
+			&:hover {
+				
+				.mkd-cc-image {
+					@include mkdTransform(translateX(100%));
+					opacity: 0;
+				}
+				
+				.mkd-cc-hover-image {
+					@include mkdTransform(translate(-50%, -50%));
+					opacity: 1;
+				}
+			}
+			
+			.mkd-cc-image {
+				position: relative;
+				display: block;
+				width: auto;
+				margin: 0 auto;
+				opacity: 1;
+				@include mkdTransition(all .6s ease);
+			}
+			
+			.mkd-cc-hover-image {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: auto;
+				@include mkdTransition(all .6s ease);
+				opacity: 0;
+				@include mkdTransform(translate(-150%, -50%));
+			}
+		}
+	}
+	
+	/***** Hover Types - end *****/
+}
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+	transition: height 500ms ease-in-out;
+}
+
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/* ==========================================================================
+   Clients Carousel shortcode style - end
+   ========================================================================== */

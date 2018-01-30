@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Pricing Item shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape {
+
+  .mkd-price-item {
+
+    .mkd-pi-inner {
+
+      .mkd-pi-prices {
+        width: 45%;
+        text-align: right;
+
+      }
+
+      .mkd-pi-content-holder {
+        width: 55%;
+      }
+
+    }
+  }
+}
+
+@include ipad-landscape {
+
+  .mkd-price-item {
+
+    .mkd-pi-inner {
+
+      .mkd-pi-prices {
+        width: 45%;
+        text-align: center;
+        padding-right: 15px;
+      }
+
+      .mkd-pi-content-holder {
+        width: 55%;
+      }
+
+    }
+  }
+}
+
+@include phone-portrait {
+
+   .mkd-price-item {
+
+     .mkd-pi-inner {
+
+       .mkd-pi-prices {
+         width: 100%;
+         text-align: left;
+
+       }
+
+       .mkd-pi-content-holder {
+         width: 100%;
+         margin-top: 90px;
+       }
+
+     }
+   }
+
+ }
+
+/* ==========================================================================
+   Pricing Item shortcode responsive style - end
+   ========================================================================== */

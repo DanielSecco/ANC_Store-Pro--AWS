@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Portfolio Project Info shortcode style - begin
+   ========================================================================== */
+
+.mkd-portfolio-project-info {
+    position: relative;
+	display: inline-block;
+	vertical-align: middle;
+
+	.mkd-ppi-label {
+		margin: 0;
+		padding: 0;
+	}
+
+	> div {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 5px 0 0;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	.mkd-ppi-title {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+	}
+}
+/* ==========================================================================
+   Portfolio Project Info shortcode style - end
+   ========================================================================== */

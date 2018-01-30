@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Counter shortcode style - begin
+   ========================================================================== */
+
+.mkd-counter-holder {
+    @include mkdRelativeHolderLayout();
+    opacity: 0;
+    @include mkdTransition(opacity 0.2s ease-in);
+	text-align: center;
+	margin-bottom: 35px;
+
+	&.mkd-counter-boxed {
+		border: 1px solid #e6e6e6;
+		box-sizing: border-box;
+		.mkd-counter-inner {
+			padding: 55px 0;
+		}
+	}
+	
+	.mkd-counter-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+    .mkd-counter {
+	    height: 1em;
+	    display: inline-block !important;
+	    vertical-align: middle;
+	    color: #fff;
+	    font-size: 36px;
+	    line-height: 1em;
+		letter-spacing: 0.1em;
+	    font-weight: 200;
+	    overflow: hidden;
+    }
+
+    .mkd-counter-title {
+	    margin: 17px 0 0;
+		font-size: 14px;
+		line-height: 40px;
+		letter-spacing: 0.1em;
+		font-weight: 600;
+		color: #fff;
+    }
+
+    .mkd-counter-text {
+	    margin: 14px 0 0;
+    }
+}
+/* ==========================================================================
+   Counter shortcode style - end
+   ========================================================================== */

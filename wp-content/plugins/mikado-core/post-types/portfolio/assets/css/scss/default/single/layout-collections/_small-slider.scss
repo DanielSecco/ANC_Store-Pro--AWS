@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Portfolio Single - Small Slider layout style - begin
+   ========================================================================== */
+
+.mkd-portfolio-single-holder {
+	
+	&.mkd-ps-small-slider-layout {
+
+		.mkd-portfolio-single-likes {
+			display: inline-block;
+			padding-top: 31px;
+			a {
+				padding-right: 10px;
+				i {
+					font-size: 13px;
+				}
+
+				span {
+					font-size: 12px;
+					color: $first-main-color;
+					letter-spacing: 0.1em;
+					font-weight: 600;
+					text-transform: uppercase;
+					padding-left: 11px;
+
+					&:nth-child(3) {
+						padding-left: 5px;
+
+						&:after {
+							content: "";
+							border-right: 1px solid #d3d3d3;
+							padding-left: 26px;
+						}
+					}
+				}
+			}
+		}
+
+		.mkd-ps-info-item {
+
+			&.mkd-ps-date {
+				margin-top: 6px;
+
+				h5,
+				p {
+					display: inline-block;
+				}
+
+				p {
+					font-size: 14px;
+					color: #b1b1b1;
+				}
+
+				h5 {
+					text-transform: none;
+					letter-spacing: 0;
+				}
+			}
+
+
+			&.mkd-ps-custom-field {
+				margin-top: 5px;
+				margin-bottom: 3px;
+
+				h5,
+				p {
+					display: inline-block;
+				}
+
+				p {
+					font-size: 14px;
+					color: #b1b1b1;
+				}
+
+				h5 {
+					text-transform: none;
+					letter-spacing: 0;
+				}
+			}
+
+			&.mkd-ps-social-share {
+				display: inline;
+
+				&:before {
+					content: "SHARE";
+					font-size: 12px;
+					color: $first-main-color;
+					letter-spacing: 0.1em;
+					font-weight: bold;
+					line-height: 25px;
+					position: relative;
+					bottom: 1px;
+					padding-right: 15px;
+				}
+			}
+		}
+		
+		.mkd-ps-image-holder {
+			padding-right: 13%;
+			box-sizing: border-box;
+			
+			.mkd-ps-image-inner {
+				visibility: hidden;
+			}
+			
+			.mkd-ps-image {
+				
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		.mkd-ps-content-item {
+			margin: 0 0 30px;
+
+			h2 {
+				margin-top: -5px;
+				margin-bottom: 5px;
+				letter-spacing: 0.1em;
+				line-height: 40px;
+			}
+
+			p {
+				color: $default-text-color;
+				font-size: 20px;
+				letter-spacing: 0;
+				font-weight: 300;
+				line-height: 31px;
+
+			}
+		}
+
+		.owl-nav {
+
+			.mkd-prev-icon,
+			.mkd-next-icon {
+
+				.mkd-icon-linear-icon {
+					position: relative;
+					display: inline-block;
+					vertical-align: middle;
+					font-size: 44px;
+					line-height: inherit;
+					color: rgba(255,255,255,0.7);
+
+					&:before {
+						display: block;
+						line-height: inherit;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include laptop-landscape-medium {
+
+	.mkd-portfolio-single-holder {
+
+		&.mkd-ps-small-slider-layout {
+
+			.mkd-ps-image-holder {
+				padding-right: 7%;
+			}
+
+		}
+	}
+}
+
+
+@include ipad-landscape {
+
+	.mkd-portfolio-single-holder {
+
+		&.mkd-ps-small-slider-layout {
+
+			.mkd-ps-image-holder {
+				padding-right: 0;
+			}
+
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Portfolio Single - Small Slider layout style - end
+   ========================================================================== */

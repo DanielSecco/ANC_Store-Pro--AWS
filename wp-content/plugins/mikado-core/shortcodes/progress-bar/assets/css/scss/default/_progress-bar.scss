@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Progress Bar shortcode style - begin
+   ========================================================================== */
+
+.mkd-progress-bar {
+    @include mkdRelativeHolderLayout();
+
+
+    &.mkd-progress-bar-dark {
+        .mkd-pb-title-holder {
+            position: relative;
+            margin: 16px 0 6px;
+            letter-spacing: 0.1em;
+            line-height: 33px;
+            font-weight: bold;
+
+            .mkd-pb-title {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                z-index: 100;
+                color: #000;
+
+            }
+        }
+
+
+        .mkd-pb-percent {
+            position: absolute;
+            right: 0;
+            bottom: 1px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0;
+            z-index: 10;
+            letter-spacing: 0.1em;
+            line-height: 33px;
+            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+
+            &:after {
+                content: '%';
+            }
+        }
+
+        .mkd-pb-content-holder {
+            position: relative;
+            height: 6px;
+            overflow: hidden;
+            background-color: #b4b4b4;
+
+            .mkd-pb-content {
+                height: 6px;
+                max-width: 100%;
+                overflow: hidden;
+                background-color: $first-main-color;
+            }
+        }
+    }
+
+    &.mkd-progress-bar-light {
+        .mkd-pb-title-holder {
+            position: relative;
+            margin: 16px 0 6px;
+            letter-spacing: 0.1em;
+            line-height: 33px;
+            font-weight: bold;
+
+            .mkd-pb-title {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                z-index: 100;
+                color: #fff;
+
+            }
+        }
+
+
+        .mkd-pb-percent {
+            position: absolute;
+            right: 0;
+            bottom: 1px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0;
+            z-index: 10;
+            letter-spacing: 0.1em;
+            line-height: 33px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+
+            &:after {
+                content: '%';
+            }
+        }
+
+        .mkd-pb-content-holder {
+            position: relative;
+            height: 6px;
+            overflow: hidden;
+            background-color: #4d4d4d;
+
+            .mkd-pb-content {
+                height: 6px;
+                max-width: 100%;
+                overflow: hidden;
+                background-color: #fff;
+            }
+        }
+
+
+    }
+
+    &.mkd-progress-bar-default {
+        .mkd-pb-title-holder {
+            position: relative;
+            margin: 16px 0 6px;
+            letter-spacing: 0.1em;
+            line-height: 33px;
+            font-weight: bold;
+
+            .mkd-pb-title {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                z-index: 100;
+
+            }
+        }
+
+
+        .mkd-pb-percent {
+            position: absolute;
+            right: 0;
+            bottom: 1px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0;
+            z-index: 10;
+            letter-spacing: 0.1em;
+            line-height: 33px;
+            font-size: 14px;
+            font-weight: bold;
+
+            &:after {
+                content: '%';
+            }
+        }
+
+        .mkd-pb-content-holder {
+            position: relative;
+            height: 6px;
+            overflow: hidden;
+            background-color: #f7f7f7;
+
+            .mkd-pb-content {
+                height: 6px;
+                max-width: 100%;
+                overflow: hidden;
+                background-color: $first-main-color;
+            }
+        }
+
+
+    }
+
+
+}
+/* ==========================================================================
+   Progress Bar shortcode style - end
+   ========================================================================== */

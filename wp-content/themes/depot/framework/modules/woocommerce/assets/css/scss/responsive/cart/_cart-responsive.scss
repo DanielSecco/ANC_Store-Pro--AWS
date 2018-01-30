@@ -1,0 +1,131 @@
+/* ==========================================================================
+   WooCommerce Cart page responsive styles - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+	.mkd-woocommerce-page.woocommerce-cart {
+		.woocommerce>form,
+		.cart-collaterals {
+			float: none;
+			margin-bottom: 80px;
+			width: 100%;
+		}
+	}
+
+	.mkd-woocommerce-page {
+
+		.cart-empty + p {
+			padding: 0 18%;
+		}
+	}
+}
+
+
+
+@include ipad-portrait {
+	
+	.mkd-woocommerce-page {
+
+		.cart-empty + p {
+			padding: 0 2%;
+		}
+		
+		table.cart {
+			
+			td.actions {
+				
+				.coupon {
+					
+					input[type="text"] {
+						width: 180px;
+						margin: 0 17px 0 0;
+						padding: 9px 20px;
+					}
+				}
+				
+				.button {
+					height: 38px;
+					line-height: 38px;
+					padding: 0 28px;
+				}
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+
+	.mkd-woocommerce-page.woocommerce-cart {
+		.woocommerce > form table.cart {
+			tr.cart_item{
+				td.product-thumbnail,
+				td.product-price{
+					display: none;
+				}
+
+				td.product-name{
+					a{
+						top: 2px;
+						position: relative;
+					}
+				}
+
+				.mkd-quantity-buttons{
+					background-color: transparent;
+					border: none;
+					margin: 0;
+					padding: 0;
+					width: 80px;
+
+					.mkd-quantity-label{
+						display: none;
+					}
+				}
+			}
+
+			td.actions {
+				.coupon {
+					float: none;
+					width: 100%;
+				}
+			}
+
+		}
+
+		.cart-collaterals {
+
+			tr {
+				display: inline-block;
+				width: 100%;
+
+				th {
+					float: left;
+				}
+				td {
+					float: right;
+				}
+
+				&.shipping {
+					th, td {
+						float: none;
+						display: inline-block;
+						width: 100%;
+						padding: 0;
+					}
+				}
+			}
+
+			.checkout-button{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+
+	}
+}
+
+
+/* ==========================================================================
+   WooCommerce Cart page responsive styles - end
+   ========================================================================== */

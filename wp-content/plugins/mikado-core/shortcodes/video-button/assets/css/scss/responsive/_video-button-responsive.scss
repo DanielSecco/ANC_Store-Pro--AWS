@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Video button shortcode responsive style - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+
+  .mkd-video-button-holder {
+
+    .mkd-video-button-play {
+      font-size: 70px;
+    }
+  }
+
+}
+
+@include phone-portrait {
+
+  .mkd-video-button-holder {
+
+    .mkd-video-button-play {
+      font-size: 65px;
+    }
+  }
+
+}
+/* ==========================================================================
+   Video button shortcode responsive style - end
+   ========================================================================== */

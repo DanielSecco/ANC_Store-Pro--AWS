@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+
+.mkd-image-with-text-holder {
+    @include mkdRelativeHolderLayout();
+	
+	.mkd-iwt-image {
+		@include mkdRelativeHolderLayout();
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.mkd-iwt-text-holder {
+		@include mkdRelativeHolderLayout();
+	}
+	
+	.mkd-iwt-title {
+		margin: 35px 0 0;
+	}
+	
+	.mkd-iwt-text {
+		margin: 14px 0 0;
+	}
+}
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */

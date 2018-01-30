@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.mkd-video-button-holder {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	
+	.mkd-video-button-image {
+		@include mkdRelativeHolderLayout();
+
+		&:after {
+			content:'';
+			position: absolute;
+			top:0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0,0,0,0.2);
+			opacity: 0;
+			@include mkdTransition(opacity .25s);
+		}
+		
+		img {
+			display: block;
+		}
+	}
+	
+	.mkd-video-button-play,
+	.mkd-video-button-play-image {
+		@include mkdAbsoluteHolderLayout();
+		z-index: 1;
+		
+		.mkd-video-button-play-inner {
+			box-sizing: border-box;
+			width: 55px;
+			height: 55px;
+			margin: auto;
+			background-color: black;
+			color:white;
+			position: relative;
+			left: 0;
+			text-align: center;
+			@include mkdTransform(translateY(-50%));
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+
+		}
+	}
+	
+	.mkd-video-button-play {
+		color: $default-heading-color;
+		font-size: 86px;
+		display: block;
+		line-height: 55px;
+		margin: 0 auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+
+		span {
+			display: block;
+			line-height: inherit;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include mkdTransform(translate(-50%, -50%));
+			
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+		}
+	}
+
+	&:hover {
+		.mkd-video-button-image {
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	
+	.mkd-video-button-play-image {
+		
+		&.mkd-vb-has-hover-image {
+			
+			&:hover {
+				
+				img {
+					
+					&:first-child {
+						opacity: 0;
+					}
+					
+					&:nth-child(2) {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+		img {
+			display: block;
+			margin: 0 auto;
+			@include mkdTransition(opacity .3s ease-in-out);
+			
+			&:first-child {
+				position: relative;
+				opacity: 1;
+			}
+			
+			&:nth-child(2) {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				opacity: 0;
+				@include mkdTransform(translateX(-50%) translateZ(0));
+				
+				.rev_slider_wrapper & {
+					@include mkdTransform(translateZ(0));
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

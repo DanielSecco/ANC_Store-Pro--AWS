@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Portfolio Single navigation style - begin
+   ========================================================================== */
+
+.mkd-ps-navigation {
+	padding: 0;
+	padding-top: 43px;
+	padding-bottom: 43px;
+	border-top: 1px solid #e6e6e6;
+	position: relative;
+	display: table;
+	width: 100%;
+	vertical-align: middle;
+	margin: 110px 0 0;
+	clear: both;
+	margin-left: -1000px;
+	margin-right: -1000px;
+	padding-left: 1000px;
+	padding-right: 1000px;
+
+    .mkd-ps-full-width-custom-layout & {
+        padding: 0 40px;
+    }
+	
+	.mkd-ps-back-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		@include mkdTransform(translateX(-50%) translateY(-50%));
+		
+		a {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+			cursor: pointer;
+			font-size: 16px;
+			line-height: 1;
+			
+			span {
+				display: block;
+				line-height: inherit;
+				color: $default-text-color;
+				
+				&:before,
+				&:after {
+					display: block;
+					line-height: 14px;
+				}
+			}
+		}
+	}
+	
+	.mkd-ps-prev,
+	.mkd-ps-next {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		width: 49%;
+		padding: 0;
+		box-sizing: border-box;
+
+		.mkd-single-nav-image-holder {
+			width: 82px;
+			height: 82px;
+		}
+
+		.mkd-single-nav-title-holder {
+			padding-top: 11px;
+
+			.mkd-single-nav-title {
+				font-size: 16px;
+				color: $default-heading-color;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				font-weight: bold;
+
+				@include phone-portrait {
+					display: none;
+				}
+			}
+
+			a {
+				display: block;
+			}
+		}
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 14px;
+			line-height: 31px;
+			color: #929292;
+			
+			.mkd-ps-nav-mark {
+				position: relative;
+				display: inline-block;
+				font-size: 11px;
+				color: $first-main-color;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+	
+	.mkd-ps-prev {
+
+		.mkd-single-nav-title-holder {
+			float: left;
+		}
+
+		.mkd-single-nav-image-holder {
+			float: left;
+			padding-right: 24px;
+		}
+		
+		a {
+			
+			.mkd-ps-nav-mark {
+				padding-left: 3px;
+				padding-right: 10px;
+				left: 0;
+			}
+		}
+	}
+	
+	.mkd-ps-next {
+		text-align: right;
+
+		.mkd-single-nav-title-holder {
+			float: right;
+		}
+
+		.mkd-single-nav-image-holder {
+			float: right;
+			padding-left: 24px;
+		}
+		
+		a {
+			
+			.mkd-ps-nav-mark {
+				padding-left: 10px;
+				padding-right: 3px;
+				right: 0;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Single navigation style - end
+   ========================================================================== */

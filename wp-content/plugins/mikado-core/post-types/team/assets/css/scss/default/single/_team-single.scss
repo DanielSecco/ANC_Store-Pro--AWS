@@ -1,0 +1,157 @@
+.mkd-team-single-holder{
+
+    .mkd-two-columns-50-50 {
+        width: 100%;
+
+        .mkd-two-columns-50-50-inner {
+            margin: 0 -15px;
+
+            .mkd-column {
+                width: 50%;
+                float: left;
+
+                &:first-child {
+                    .mkd-column-inner {
+                        padding-right: 0;
+                    }
+                }
+
+                &:last-child {
+                    .mkd-column-inner {
+                        padding-right: 7%;
+                    }
+                }
+
+                .mkd-column-inner {
+                    padding: 0 15px;
+                    .mkd-ts-details-holder-inner {
+                        padding-top: 18.2%;
+                        width: 67%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .mkd-name {
+        margin: -10px 0 10px;
+        @include ipad-landscape {
+            margin: 15px 0 10px;
+        }
+    }
+
+    .mkd-position{
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        .mkd-icon-shortcode{
+
+            &:first-child {
+                padding-left: 12px;
+            }
+
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+            font-size: 12.5px;
+
+            a, span, i {
+                color: $default-text-color;
+            }
+        }
+    }
+
+    .mkd-ts-bio-holder {
+        padding-top: 53px;
+        @include laptop-landscape-medium {
+        padding-top: 18px;
+        }
+
+        @include ipad-landscape {
+            padding-top: 53px;
+        }
+
+    }
+
+    .mkd-grid-col-6 {
+        color: #ababab;
+        font-size: 12px;
+        padding: 10px 15px;
+        padding-left: 2px;
+        padding-right: 30px;
+        padding-top: 0;
+
+        .mkd-grid-col-6-inner {
+            border-bottom: 1px solid #dadada;
+            padding: 10px 15px;
+            padding-left: 0;
+            padding-top: 0;
+
+            .info {
+                font-size: 16px;
+                color: #ababab;
+            }
+        }
+
+
+        &:nth-last-child(2){
+            .mkd-grid-col-6-inner {
+                border: 0;
+            }
+        }
+
+        &:last-child {
+            .mkd-grid-col-6-inner {
+                border: 0;
+            }
+        }
+
+        .icon{
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .info{
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        a{
+            color: $default-text-color;
+        }
+    }
+
+    .mkd-team-single-content{
+        margin-top: 34px;
+        margin-bottom: 30px;
+        display: inline-block;
+        .mkd-btn {
+            margin-top: 18px;
+            padding: 14px 35px 12px;
+        }
+    }
+}
+
+@media only screen and (max-width: $ipad-portrait) {
+    .mkd-team-single-holder{
+
+        .mkd-two-columns-50-50 {
+            width: 100%;
+
+            .mkd-two-columns-50-50-inner {
+                margin: 0 -15px;
+
+                .mkd-column {
+                    width: 100%;
+                    float: left;
+                }
+            }
+        }
+    }
+}

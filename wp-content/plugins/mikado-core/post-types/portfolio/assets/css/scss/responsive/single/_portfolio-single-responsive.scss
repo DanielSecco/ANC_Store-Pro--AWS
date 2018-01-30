@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Portfolio Single page responsive style - begin
+   ========================================================================== */
+
+.mkd-portfolio-single-holder {
+	
+    .mkd-ps-image-holder {
+	    
+	    &.mkd-ps-gallery-images {
+		
+		    /***** Columns Layout - begin *****/
+		
+		    @include laptop-landscape {
+			
+			    $columns_number: ('four');
+			
+			    @for $i from 0 to length($columns_number) {
+				    &.mkd-ps-#{nth($columns_number,$i+1)}-columns {
+					    $item_size: 100% / 3;
+					
+					    .mkd-ps-image {
+						    width: $item_size;
+					    }
+					
+					    @media only screen and (min-width: $ipad-landscape-plus-pixel) {
+						
+						    .mkd-ps-image {
+							
+							    &:nth-child(3n+1) {
+								    clear: both;
+							    }
+						    }
+					    }
+				    }
+			    }
+		    }
+		
+		    @include ipad-landscape {
+			
+			    $columns_number: ('three', 'four');
+			
+			    @for $i from 0 to length($columns_number) {
+				    &.mkd-ps-#{nth($columns_number,$i+1)}-columns {
+					
+					    .mkd-ps-image {
+						    width: 50%;
+					    }
+					
+					    @media only screen and (min-width: $phone-landscape-plus-pixel) {
+						
+						    .mkd-ps-image {
+							
+							    &:nth-child(2n+1) {
+								    clear: both;
+							    }
+						    }
+					    }
+				    }
+			    }
+		    }
+		
+		    @include phone-landscape {
+			
+			    .mkd-ps-image {
+				    width: 100% !important; // !important is set to override all other stronger selectors
+			    }
+		    }
+		
+		    /***** Columns Layout - end *****/
+	    }
+	    
+	    &.mkd-ps-masonry-images {
+		
+		    @include laptop-landscape {
+			    
+			    $masonry_columns_number: ('four', 'five');
+			
+			    @for $i from 0 to length($masonry_columns_number) {
+				    &.mkd-ps-#{nth($masonry_columns_number,$i+1)}-columns {
+					    $column_width: 100% / 3;
+					
+					    .mkd-ps-image,
+					    .mkd-ps-grid-sizer {
+						    width: $column_width;
+					    }
+					
+					    .mkd-ps-image.mkd-ps-masonry-large-item {
+						    width: $column_width * 2;
+					    }
+				    }
+			    }
+		    }
+		
+		    @include ipad-landscape {
+			    
+			    $masonry_columns_number: ('three', 'four', 'five');
+			
+			    @for $i from 0 to length($masonry_columns_number) {
+				    &.mkd-ps-#{nth($masonry_columns_number,$i+1)}-columns {
+					
+					    .mkd-ps-image,
+					    .mkd-ps-grid-sizer {
+						    width: 50%;
+					    }
+					
+					    .mkd-ps-image.mkd-ps-masonry-large-item {
+						    width: 100%;
+					    }
+				    }
+			    }
+		    }
+		    
+		    @include phone-landscape {
+				
+			    $masonry_columns_number: ('two', 'three', 'four');
+			
+			    @for $i from 0 to length($masonry_columns_number) {
+				    &.mkd-ps-#{nth($masonry_columns_number,$i+1)}-columns {
+					
+					    .mkd-ps-image,
+					    .mkd-ps-grid-sizer {
+						    width: 100%;
+					    }
+				    }
+			    }
+		    }
+	    }
+    }
+	
+	@include ipad-landscape {
+		
+		.mkd-ps-info-holder {
+			margin: 100px 0 0!important; // can be set inline in option
+		}
+
+		&.mkd-ps-images-layout,
+		&.mkd-ps-slider-layout,
+		&.mkd-ps-gallery-layout,
+		&.mkd-ps-masonry-layout {
+			.mkd-ps-info-holder {
+				margin: 0 !important;
+			}
+		}
+	}
+
+	@include phone-portrait {
+
+		.mkd-ps-content-holder {
+
+			.mkd-ps-info-holder {
+				margin: 50px 0 0 !important; // can be set inline in option
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+
+	.mkd-portfolio-single-holder {
+
+		&.mkd-ps-slider-layout {
+
+			.mkd-ps-content-holder {
+
+				.mkd-ps-info-holder {
+
+					.mkd-ps-info-item {
+						padding-left: 10px;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio Single page responsive style - end
+   ========================================================================== */

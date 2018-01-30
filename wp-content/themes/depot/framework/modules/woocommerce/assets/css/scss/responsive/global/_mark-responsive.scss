@@ -1,0 +1,19 @@
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock responsive styles - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+
+    .mkd-woo-single-page {
+	
+	    .mkd-single-product-content {
+		
+		    .mkd-out-of-stock {
+			    right: 30px;
+		    }
+	    }
+    }
+}
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock responsive styles - end
+   ========================================================================== */

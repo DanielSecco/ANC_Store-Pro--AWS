@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Call To Action shortcode responsive style - begin
+   ========================================================================== */
+
+
+@media only screen and (min-width: $laptop-landscape-plus-pixel) and (max-width: 1300px) {
+	
+	.mkd-call-to-action-holder {
+		
+		.mkd-grid {
+			width: 1100px;
+		}
+	}
+}
+
+@include laptop-landscape {
+	
+	.mkd-call-to-action-holder {
+		
+		&.mkd-three-quarters-columns,
+		&.mkd-four-fifths-columns {
+			
+			.mkd-cta-text-holder {
+				width: 66.66666666666667%;
+			}
+			
+			.mkd-cta-button-holder {
+				width: 33.33333333333333%;
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+	
+	.mkd-call-to-action-holder {
+		
+		&.mkd-normal-layout {
+			
+			.mkd-cta-inner,
+			.mkd-cta-text-holder,
+			.mkd-cta-button-holder {
+				display: block;
+			}
+			
+			.mkd-cta-button-holder {
+				margin: 10px 0 0;
+				text-align: initial;
+			}
+		}
+		
+		&.mkd-two-halves-columns,
+		&.mkd-two-thirds-columns,
+		&.mkd-three-quarters-columns,
+		&.mkd-four-fifths-columns {
+			
+			.mkd-cta-text-holder,
+			.mkd-cta-button-holder {
+				width: 100%;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Call To Action shortcode responsive style - end
+   ========================================================================== */

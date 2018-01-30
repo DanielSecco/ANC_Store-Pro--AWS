@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Testimonials standard style - begin
+   ========================================================================== */
+.mkd-testimonials-holder {
+    &.mkd-testimonials-standard {
+        text-align: center;
+
+        .mkd-testimonial-quote {
+            text-align: center;
+
+            span {
+                font-size: 45px;
+                color: #000;
+            }
+        }
+
+        .mkd-testimonial-image {
+            @include mkdRelativeHolderLayout();
+            margin: 25px 0 0;
+
+            img {
+                height: 75px;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .mkd-testimonial-title {
+            margin: 0;
+        }
+
+        .mkd-testimonial-author {
+            margin: 30px 0 0;
+        }
+
+        .mkd-testimonial-position {
+            color: $default-text-color;
+            margin-top: 8px;
+            text-transform: none;
+            letter-spacing: initial;
+        }
+
+        .mkd-testimonial-text {
+            margin: 19px 0 0;
+            color: $default-text-color;
+            padding: 0 20px;
+        }
+
+        /* Light/Dark styles */
+        &.mkd-testimonials-light {
+
+            .owl-nav {
+
+                .mkd-prev-icon,
+                .mkd-next-icon {
+                    color: #fff;
+
+                }
+            }
+
+            .mkd-testimonial-quote {
+                span {
+                    color: #fff;
+                }
+            }
+
+            .mkd-testimonial-title {
+                color: #fff;
+            }
+            .mkd-testimonial-text {
+                color: #fff;
+            }
+            .mkd-testimonial-author {
+                color: #fff;
+            }
+
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        border: 2px solid rgba(#fff, .5);
+                        background-color: #fff;
+                    }
+
+                    &:hover,
+                    &.active {
+
+                        span {
+                            background-color: #fff;
+                            border-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        &.mkd-testimonials-dark {
+
+        }
+    }
+}
+
+/* ==========================================================================
+   Testimonials standard style - end
+   ========================================================================== */
+

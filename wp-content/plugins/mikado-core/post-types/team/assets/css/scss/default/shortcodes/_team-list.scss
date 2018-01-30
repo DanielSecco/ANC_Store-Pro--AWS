@@ -1,0 +1,102 @@
+/* ==========================================================================
+# Team list - begin
+	========================================================================== */
+
+.mkd-team-list-holder {
+
+    .mkd-tl-inner{
+        margin: 0px -15px;
+    }
+
+    .mkd-team {
+        float: left;
+        padding: 0 15px;
+        margin-bottom: 63px;
+        box-sizing: border-box;
+
+        .mkd-team-info {
+            .mkd-team-name {
+                letter-spacing: 0.1em;
+            }
+
+            .mkd-team-position {
+                letter-spacing: 0.1em;
+                color: $default-text-color;
+                margin-top: -11px;
+            }
+
+            .mkd-team-excerpt {
+                color: $default-text-color;
+            }
+
+        }
+
+        .mkd-icon-shortcode {
+            .mkd-icon-element {
+                color: #000;
+                font-size: 13px;
+            }
+        }
+
+        &.info-bellow {
+            .mkd-team-title-holder {
+                margin-top: 25px;
+            }
+
+            &.circle {
+                .mkd-team-image {
+                    padding: 0px 27%;
+
+                    @include ipad-landscape {
+                        padding: 0;
+                    }
+
+                    img {
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+    }
+
+    $team_columns_number: ('two', 'three', 'four', 'five');
+
+    @for $i from 0 to length($team_columns_number) {
+        &.mkd-tl-#{nth($team_columns_number,$i+1)}-columns {
+
+            .mkd-team {
+                width: 100% / ($i+2);
+            }
+
+            @if ($i > 1) { // set different break point for four and five columns
+                @media only screen and (min-width:  $laptop-landscape-plus-pixel) {
+
+                    .mkd-team {
+
+                        &:nth-child(#{$i+2}n+1) {
+                            clear: both;
+                        }
+                    }
+                }
+            } @else {
+                @media only screen and (min-width:  $ipad-landscape-plus-pixel) {
+
+                    .mkd-team {
+
+                        &:nth-child(#{$i+2}n+1) {
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/* ==========================================================================
+# Team list - end
+========================================================================== */

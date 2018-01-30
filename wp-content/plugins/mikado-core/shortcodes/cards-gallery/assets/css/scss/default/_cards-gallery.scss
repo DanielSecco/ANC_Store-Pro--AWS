@@ -1,0 +1,188 @@
+.mkd-cards-gallery-holder {
+    padding: 10px 0px;
+
+    .mkd-cards-gallery {
+        width: 100%;
+        position: relative;
+    }
+
+    img {
+        position: relative;
+        display: block;
+        box-shadow: 0 0 15px 5px rgba(0,0,0,.05);
+    }
+
+    .fake_card {
+        position: relative;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+
+    .card {
+        box-sizing: border-box;
+        position: absolute;
+        @include mkdTransition(all .15s ease);
+        width: 100%;
+
+        &.animating {
+            @include mkdTransition(all 1s cubic-bezier(.19,1,.22,1));
+            pointer-events:none;
+        }
+
+        &.animating-siblings {
+            @include mkdTransition(all .6s cubic-bezier(0,0,0,1));
+            pointer-events:none;
+        }
+    }
+
+    &.mkd-shuffled-left .card {
+        will-change:transform;
+
+        &.out {
+            @include mkdTransform(translateX(-100%));
+        }
+
+        &:nth-last-child(6) {
+            @include mkdTransform(scale(.5) translateX(80%));
+        }
+
+        &:nth-last-child(5) {
+            @include mkdTransform(scale(.6) translateX(54%));
+        }
+
+        &:nth-last-child(4) {
+            @include mkdTransform(scale(.7) translateX(35%));
+        }
+
+        &:nth-last-child(3) {
+            @include mkdTransform(scale(.8) translateX(21%));
+        }
+
+        &:nth-last-child(2) {
+            @include mkdTransform(scale(.9) translateX(9.2%));
+        }
+
+        &:not(:last-of-type) {
+            cursor: pointer;
+        }
+
+        &:not(:last-of-type):not(.active):hover {
+            margin-left: 10px !important;
+        }
+    }
+
+    &.mkd-shuffled-right .card {
+        will-change:transform;
+
+        &.out {
+            @include mkdTransform(translateX(100%));
+        }
+
+        &:nth-last-child(6) {
+            @include mkdTransform(scale(.5) translateX(-80%));
+        }
+
+        &:nth-last-child(5) {
+            @include mkdTransform(scale(.6) translateX(-54%));
+        }
+
+        &:nth-last-child(4) {
+            @include mkdTransform(scale(.7) translateX(-35%));
+        }
+
+        &:nth-last-child(3) {
+            @include mkdTransform(scale(.8) translateX(-21%));
+        }
+
+        &:nth-last-child(2) {
+            @include mkdTransform(scale(.9) translateX(-9.2%));
+        }
+
+        &:not(:last-of-type) {
+            cursor: pointer;
+        }
+
+        &:not(:last-of-type):not(.active):hover {
+            margin-left: -10px !important;
+        }
+    }
+
+    .no-touch &.mkd-bundle-animation {
+        img {
+            visibility: hidden;
+        }
+
+        &.mkd-shuffled-right.mkd-appeared {
+            @include keyframes(mkdCardAppearFromRight) {
+                0% {
+                    @include mkdTransform(translate3d(100%,0,0));
+                    opacity:0;
+                    visibility: visible;
+                }
+
+                30% {
+                    opacity:1;
+                    visibility: visible;
+                }
+
+                100% {
+                    visibility: visible;
+                    @include mkdTransform(translate3d(0,0,0));
+                }
+            }
+
+            img {
+                @include mkdAnimation(mkdCardAppearFromRight 1s cubic-bezier(.19,1,.22,1) forwards);
+            }
+
+            .card {
+                @for $i from 1 through 8 {
+                    &:nth-child(#{$i}) {
+                        img:not(.mkd-animation-done) {
+                            -webkit-animation-delay: $i * .2s;
+                            animation-delay: $i * .2s;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mkd-shuffled-left.mkd-appeared {
+            @include keyframes(mkdCardAppearFromLeft) {
+                0% {
+                    visibility: visible;
+                    @include mkdTransform(translate3d(-100%,0,0));
+                    opacity:0;
+                }
+
+                30% {
+                    visibility: visible;
+                    opacity:1;
+                }
+
+                100% {
+                    visibility: visible;
+                    @include mkdTransform(translate3d(0,0,0));
+                }
+            }
+
+            img {
+                @include mkdAnimation(mkdCardAppearFromLeft 1s cubic-bezier(.19,1,.22,1) forwards);
+            }
+
+            .card {
+                @for $i from 1 through 8 {
+                    &:nth-child(#{$i}) {
+                        img:not(.mkd-animation-done) {
+                            -webkit-animation-delay: $i * .2s;
+                            animation-delay: $i * .2s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

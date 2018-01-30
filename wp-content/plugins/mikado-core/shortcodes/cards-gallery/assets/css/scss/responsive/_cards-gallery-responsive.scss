@@ -1,0 +1,63 @@
+.mkd-cards-gallery-holder {
+    @include ipad-portrait {
+	    .fake_card {
+	        @include mkdTransform(scale(.8));
+	    }
+
+    	&.mkd-shuffled-left .card {
+	        @include mkdTransform(scale(.8));
+
+    	    &.out {
+    	        @include mkdTransform(translateX(-100%));
+    	    }
+
+    	    &:nth-last-child(6) {
+    	        @include mkdTransform(scale(.3) translateX(84%));
+    	    }
+
+    	    &:nth-last-child(5) {
+    	        @include mkdTransform(scale(.4) translateX(60%));
+    	    }
+
+    	    &:nth-last-child(4) {
+    	        @include mkdTransform(scale(.5) translateX(39%));
+    	    }
+
+    	    &:nth-last-child(3) {
+    	        @include mkdTransform(scale(.6) translateX(25%));
+    	    }
+
+    	    &:nth-last-child(2) {
+    	        @include mkdTransform(scale(.7) translateX(11.2%));
+    	    }
+    	}
+
+    	&.mkd-shuffled-right .card {
+	        @include mkdTransform(scale(.8));
+
+    	    &.out {
+    	        @include mkdTransform(translateX(100%));
+    	    }
+
+    	    &:nth-last-child(6) {
+    	        @include mkdTransform(scale(.3) translateX(-84%));
+    	    }
+
+    	    &:nth-last-child(5) {
+    	        @include mkdTransform(scale(.4) translateX(-60%));
+    	    }
+
+    	    &:nth-last-child(4) {
+    	        @include mkdTransform(scale(.5) translateX(-39%));
+    	    }
+
+    	    &:nth-last-child(3) {
+    	        @include mkdTransform(scale(.6) translateX(-25%));
+    	    }
+
+    	    &:nth-last-child(2) {
+    	        @include mkdTransform(scale(.7) translateX(-11.2%));
+    	    }
+    	}
+    }
+}

@@ -1,0 +1,100 @@
+@include laptop-landscape-large {
+	.mkd-process-holder {
+		.mkd-process-item-holder {
+			.mkd-pi-image-holder {
+				width: 275px;
+				height: 275px;
+				margin-top: -20px;
+			}
+
+			.mkd-pi-holder-inner {
+				width: 100%;
+			}
+
+		}
+	}
+}
+
+@include laptop-landscape {
+	.mkd-process-holder {
+		.mkd-process-bg-holder {
+			display: none;
+		}
+
+		.mkd-process-item-holder {
+			.mkd-pi-image-holder {
+				width: 171px;
+				height: 171px;
+			}
+		}
+	}
+
+	.mkd-grid-col-9 .mkd-process-holder-items-four .mkd-process-item-holder {
+		width: 50%;
+		margin-bottom: 30px;
+	}
+
+	.mkd-grid-col-9 .mkd-process-holder .mkd-process-bg-holder {
+		background: none;
+	}
+}
+
+@include ipad-landscape {
+	.mkd-process-holder {
+		&.mkd-process-holder-items-four {
+			.mkd-process-item-holder {
+				width: 50%;
+				margin-bottom: 30px;
+
+				.mkd-pi-holder-inner {
+					width: 100%;
+
+					.mkd-pi-content-holder {
+						padding: 0 20px;
+						margin: 0;
+					}
+				}
+			}
+		}
+
+		.mkd-process-item-holder {
+
+
+			.mkd-pi-holder-inner {
+				.mkd-pi-holder-inner-wrapper {
+					&:before {
+							content: none;
+					}
+
+					&:after {
+							content: none;
+					}
+				}
+			}
+
+		}
+
+	}
+}
+
+@include ipad-portrait {
+	.mkd-process-holder {
+		&.mkd-process-holder-items-three {
+			.mkd-process-item-holder {
+				.mkd-pi-image-holder {
+					margin-top: 0;
+				}
+
+			}
+		}
+
+		.mkd-process-item-holder {
+			width: 100% !important;
+			margin-bottom: 30px;
+
+			.mkd-pi-holder-inner {
+				width: 100%;
+			}
+		}
+	}
+}

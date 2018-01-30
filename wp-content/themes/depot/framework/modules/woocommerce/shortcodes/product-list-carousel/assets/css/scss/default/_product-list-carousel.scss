@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Product List - Carousel shortcode styles - begin
+   ========================================================================== */
+
+.mkd-plc-holder {
+    @include mkdRelativeHolderLayout();
+
+    .mkd-plc-outer {
+        @include mkdRelativeHolderLayout();
+    }
+
+    .mkd-plc-item {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding: 0;
+        z-index: 100;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        &:hover {
+
+            .mkd-plc-image-outer {
+
+                .mkd-plc-text {
+                    opacity: 1;
+                }
+            }
+
+            .mkd-plc-price {
+                opacity: 0;
+                @include mkdTransform(translateX(60px));
+            }
+
+            .mkd-plc-add-to-cart{
+                opacity: 1;
+                @include mkdTransform(translateX(-50%));
+                @include mkdTransition(all .4s .1s);
+            }
+
+            .mkd-plc-text-inner {
+                @include mkdTransform(translateY(0));
+            }
+        }
+
+        .touch & {
+            cursor: pointer;
+        }
+
+        .mkd-plc-image-outer {
+            @include mkdRelativeHolderLayout();
+
+            .mkd-plc-image {
+                @include mkdRelativeHolderLayout();
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+
+                .mkd-plc-onsale,
+                .mkd-plc-out-of-stock,
+                .mkd-plc-new-product {
+                    position: absolute;
+                    display: block;
+                    top: 15px;
+                    right: 20px;
+                    width: auto;
+                    color: $default-heading-color;
+                    font-family:$alternative-text-font;
+                    font-size: 12px;
+                    line-height: 24px;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    z-index: 100;
+                    @include mkdTransform(translateZ(0));
+                    box-sizing: border-box;
+                }
+
+                .mkd-plc-new-product {
+                    right: auto;
+                    left: 20px;
+                }
+            }
+
+            .mkd-plc-text {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                @include mkdTransform(translateX(-50%));
+                display: inline-block;
+                opacity: 0;
+                box-sizing: border-box;
+                @include mkdTransition(all 0.3s ease);
+                z-index: 10;
+                white-space: nowrap;
+            }
+
+            .mkd-plc-text-inner {
+                font-size: 0; //to remove space between inline-block items
+
+
+                .mkd-plc-category,
+                .mkd-plc-excerpt,
+                .mkd-plc-rating,
+                .mkd-plc-price{
+                    color: #999999;
+                }
+            }
+        }
+
+        .mkd-plc-text-outer {
+            overflow: hidden;
+        }
+
+        .mkd-plc-text-inner {
+            @include mkdTransition(all .2s);
+            @include mkdTransform(translateY(100%));
+        }
+
+        .mkd-plc-title {
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .mkd-plc-category {
+            margin: 0px;
+        }
+
+        .mkd-plc-excerpt {
+            color: $default-heading-color;
+            line-height: 1.3em;
+            margin: 0px;
+        }
+
+        .mkd-plc-rating-holder {
+            @include mkdRelativeHolderLayout();
+            line-height: 1;
+            margin: 3px 0 6px;
+        }
+
+        .mkd-plc-rating {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            font-family: "ElegantIcons";
+            font-size: 12px;
+            line-height: 1.1em;
+            letter-spacing: 6px;
+            color: #ebbc00;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+
+            &:before {
+                content: "\e031\e031\e031\e031\e031";
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+
+                &:before {
+                    content: "\e033\e033\e033\e033\e033";
+                }
+            }
+        }
+
+        .mkd-plc-price {
+            display: inline-block;
+            color: #999;
+            font-size: 14px;
+            font-family: $alternative-text-font;
+            opacity: 1;
+            @include mkdTransition(all 0.3s ease);
+            will-change: transform;
+
+            * {
+                font-size: inherit;
+                line-height: inherit;
+            }
+
+            del {
+                margin: 0 5px 0 0;
+            }
+
+            ins {
+                text-decoration: none;
+            }
+        }
+
+        .mkd-plc-add-to-cart{
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            @include mkdTransform(translateX(-100%));
+            letter-spacing: 2px;
+            opacity: 0;
+            @include mkdTransition(all 0.4s ease);
+
+            a{
+                color: #999;
+
+                &.added {
+                    display: none;
+                }
+
+                &:hover {
+                    color: $first-main-color;
+                }
+            }
+        }
+
+        .mkd-plc-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            z-index: 9;
+        }
+
+        .mkd-plc-text-wrapper {
+            @include mkdRelativeHolderLayout();
+            margin: 22px 0 38px;
+            text-align: center;
+        }
+    }
+
+    .mkd-owl-slider .owl-nav{
+        .owl-next,
+        .owl-prev {
+            top: -50px;
+            @include mkdTransform(none);
+
+            .mkd-prev-icon,
+            .mkd-next-icon {
+                span {
+                    font-family: "ElegantIcons";
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .owl-prev {
+            left: auto;
+            right: 10px;
+
+            .mkd-prev-icon span:before{
+                content: "\44";
+            }
+        }
+
+        .owl-next{
+            right: -6px;
+
+            .mkd-next-icon span:before{
+                content: "\45";
+            }
+        }
+    }
+
+	&.mkd-plc-nav-light-skin {
+		
+		.owl-nav {
+			
+			.owl-prev,
+			.owl-next {
+				
+				&:hover {
+					
+					.mkd-prev-icon,
+					.mkd-next-icon {
+						color: $header-light-hover-color;
+					}
+				}
+			}
+			
+			.mkd-prev-icon,
+			.mkd-next-icon {
+				color: $header-light-color;
+			}
+		}
+	}
+	
+	&.mkd-plc-pag-inside-slider {
+		
+		.owl-prev,
+		.owl-next {
+			@include mkdTransform(translateY(-50%));
+		}
+		
+		.owl-dots {
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			margin: 0;
+		}
+	}
+	
+	&.mkd-plc-pag-light-skin {
+		
+		.owl-dots {
+			
+			.owl-dot {
+
+				span {
+
+					&:after {
+						background-color: $header-light-hover-color;
+					}
+				}
+
+				&:hover,
+				&.active {
+
+					span {
+
+						&:after {
+							background-color: $header-light-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Product List - Carousel shortcode styles - end
+   ========================================================================== */

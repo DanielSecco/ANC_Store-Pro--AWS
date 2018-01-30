@@ -1,0 +1,382 @@
+/* ==========================================================================
+   Global partials
+   ========================================================================== */
+/* Button mixins - start */
+/* Button mixins - end */
+/* ==========================================================================
+   Custom Post Types responsive styles
+   ========================================================================== */
+/* ==========================================================================
+   Masonry Gallery shortcodes responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1024px) {
+  .mkd-masonry-gallery-holder .mkd-mg-grid-sizer,
+  .mkd-masonry-gallery-holder .mkd-mg-item {
+    width: 50%;
+  }
+  .mkd-masonry-gallery-holder .mkd-mg-item.mkd-mg-square-big, .mkd-masonry-gallery-holder .mkd-mg-item.mkd-mg-rectangle-landscape {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkd-masonry-gallery-holder .mkd-mg-grid-sizer,
+  .mkd-masonry-gallery-holder .mkd-mg-item {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Masonry Gallery shortcodes responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Portfolio shortcode responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1200px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-four-columns article {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-four-columns article:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-five-columns article {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-five-columns article:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns .mkd-pl-grid-sizer {
+    width: 33.33333%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article.mkd-pl-masonry-large-width, .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article.mkd-pl-masonry-large-width-height {
+    width: 66.66667%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns .mkd-pl-grid-sizer {
+    width: 33.33333%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article.mkd-pl-masonry-large-width, .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article.mkd-pl-masonry-large-width-height {
+    width: 66.66667%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-three-columns article {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-three-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-four-columns article {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-four-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-five-columns article {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery.mkd-pl-five-columns article:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-three-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-three-columns .mkd-pl-grid-sizer {
+    width: 50%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-three-columns article.mkd-pl-masonry-large-width, .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-three-columns article.mkd-pl-masonry-large-width-height {
+    width: 100%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns .mkd-pl-grid-sizer {
+    width: 50%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article.mkd-pl-masonry-large-width, .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article.mkd-pl-masonry-large-width-height {
+    width: 100%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns .mkd-pl-grid-sizer {
+    width: 50%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article.mkd-pl-masonry-large-width, .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article.mkd-pl-masonry-large-width-height {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkd-portfolio-list-holder.mkd-pl-gallery article {
+    width: 100% !important;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-two-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-two-columns .mkd-pl-grid-sizer {
+    width: 100%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-three-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-three-columns .mkd-pl-grid-sizer {
+    width: 100%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-four-columns .mkd-pl-grid-sizer {
+    width: 100%;
+  }
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns article,
+  .mkd-portfolio-list-holder.mkd-pl-masonry.mkd-pl-five-columns .mkd-pl-grid-sizer {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Portfolio shortcode responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Portfolio Single page responsive style - begin
+   ========================================================================== */
+.mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images {
+  /***** Columns Layout - begin *****/
+  /***** Columns Layout - end *****/
+}
+
+@media only screen and (max-width: 1200px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images.mkd-ps-four-columns .mkd-ps-image {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images.mkd-ps-four-columns .mkd-ps-image:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images.mkd-ps-three-columns .mkd-ps-image {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images.mkd-ps-three-columns .mkd-ps-image:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images.mkd-ps-four-columns .mkd-ps-image {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images.mkd-ps-four-columns .mkd-ps-image:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-gallery-images .mkd-ps-image {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-grid-sizer {
+    width: 33.33333%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-image.mkd-ps-masonry-large-item {
+    width: 66.66667%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-five-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-five-columns .mkd-ps-grid-sizer {
+    width: 33.33333%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-five-columns .mkd-ps-image.mkd-ps-masonry-large-item {
+    width: 66.66667%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-three-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-three-columns .mkd-ps-grid-sizer {
+    width: 50%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-three-columns .mkd-ps-image.mkd-ps-masonry-large-item {
+    width: 100%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-grid-sizer {
+    width: 50%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-image.mkd-ps-masonry-large-item {
+    width: 100%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-five-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-five-columns .mkd-ps-grid-sizer {
+    width: 50%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-five-columns .mkd-ps-image.mkd-ps-masonry-large-item {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-two-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-two-columns .mkd-ps-grid-sizer {
+    width: 100%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-three-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-three-columns .mkd-ps-grid-sizer {
+    width: 100%;
+  }
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-image,
+  .mkd-portfolio-single-holder .mkd-ps-image-holder.mkd-ps-masonry-images.mkd-ps-four-columns .mkd-ps-grid-sizer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-portfolio-single-holder .mkd-ps-info-holder {
+    margin: 100px 0 0 !important;
+  }
+  .mkd-portfolio-single-holder.mkd-ps-images-layout .mkd-ps-info-holder, .mkd-portfolio-single-holder.mkd-ps-slider-layout .mkd-ps-info-holder, .mkd-portfolio-single-holder.mkd-ps-gallery-layout .mkd-ps-info-holder, .mkd-portfolio-single-holder.mkd-ps-masonry-layout .mkd-ps-info-holder {
+    margin: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mkd-portfolio-single-holder .mkd-ps-content-holder .mkd-ps-info-holder {
+    margin: 50px 0 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mkd-portfolio-single-holder.mkd-ps-slider-layout .mkd-ps-content-holder .mkd-ps-info-holder .mkd-ps-info-item {
+    padding-left: 10px;
+  }
+}
+
+/* ==========================================================================
+   Portfolio Single page responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+   Team list shortcode responsive style - begin
+   ========================================================================== */
+@media only screen and (max-width: 1200px) {
+  .mkd-team-list-holder.mkd-tl-four-columns .mkd-team {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  .mkd-team-list-holder.mkd-tl-four-columns .mkd-team:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mkd-team-list-holder.mkd-tl-five-columns .mkd-team {
+    width: 33.33333%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  .mkd-team-list-holder.mkd-tl-five-columns .mkd-team:nth-child(3n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-team-list-holder.mkd-tl-three-columns .mkd-team {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-team-list-holder.mkd-tl-three-columns .mkd-team:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-team-list-holder.mkd-tl-four-columns .mkd-team {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-team-list-holder.mkd-tl-four-columns .mkd-team:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mkd-team-list-holder.mkd-tl-five-columns .mkd-team {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 681px) {
+  .mkd-team-list-holder.mkd-tl-five-columns .mkd-team:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .mkd-team-list-holder .mkd-tl-inner .mkd-team {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Team list shortcode responsive style - end
+   ========================================================================== */
+/* ==========================================================================
+# Team responsive style - begin
+========================================================================== */
+@media only screen and (max-width: 1025px) {
+  .mkd-team.info-bellow .mkd-team-image {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mkd-team.info-hover {
+    margin-bottom: 30px;
+  }
+}
+
+/* ==========================================================================
+# Team responsive style - end
+========================================================================== */
+
+/*# sourceMappingURL=../../../../plugins/mikado-core/assets/css/custom-post-types-responsive.css.map */

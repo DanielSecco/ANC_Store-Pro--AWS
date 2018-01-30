@@ -1,0 +1,38 @@
+/* ==========================================================================
+   WooCommerce Buttons styles - begin
+   ========================================================================== */
+
+.woocommerce-page .mkd-content,
+div.woocommerce {
+    
+    a.button,
+    a.added_to_cart
+    .wc-forward:not(.added_to_cart):not(.checkout-button),
+    input[type="submit"],
+    button[type="submit"]{
+        @include mkdButtonDefaultStyle();
+        @include mkdButtonMediumParams();
+        @include mkdButtonSolidColor();
+        padding: 7px 46px;
+        white-space: nowrap;
+        cursor: pointer;
+        z-index: 3;
+        border-radius: 0;
+
+        &:hover {
+            @include mkdButtonSolidHoverColor();
+        }
+
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+    
+    a.added {
+        display: none;
+    }
+}
+/* ==========================================================================
+   WooCommerce Buttons styles - end
+   ========================================================================== */

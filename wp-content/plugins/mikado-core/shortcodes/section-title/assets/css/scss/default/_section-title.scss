@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+
+.mkd-section-title-holder {
+    @include mkdRelativeHolderLayout();
+	box-sizing: border-box;
+	
+    .mkd-st-title {
+	    display: block;
+        margin: 0;
+        line-height: 45px;
+        margin-bottom: 28px;
+        letter-spacing: 3.8px;
+    }
+    
+    .mkd-st-text {
+        font-size: 20px;
+	    display: block;
+        margin: 14px 0 0;
+        color: $default-text-color;
+        text-transform: none;
+        line-height: 30px;
+        letter-spacing: 0;
+    }
+}
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+
+

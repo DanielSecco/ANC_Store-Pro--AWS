@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Call To Action shortcode style - begin
+   ========================================================================== */
+
+.mkd-call-to-action-holder {
+    @include mkdRelativeHolderLayout();
+	
+	.mkd-cta-text-holder,
+	.mkd-cta-button-holder {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.mkd-cta-text-holder {
+		
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0;
+		}
+	}
+	
+	.mkd-cta-button-holder {
+		
+		.mkd-btn {
+			white-space: nowrap;
+		}
+	}
+	
+	/***** Layout Style - begin *****/
+	
+	&.mkd-normal-layout {
+		
+		.mkd-cta-inner {
+			display: table;
+		}
+		
+		&:not(.mkd-content-in-grid) {
+			
+			.mkd-cta-inner {
+				width: 100%;
+			}
+		}
+		
+		.mkd-cta-text-holder,
+		.mkd-cta-button-holder {
+			display: table-cell;
+			box-sizing: border-box;
+		}
+		
+		.mkd-cta-button-holder {
+			text-align: right;
+		}
+	}
+	
+	&.mkd-simple-layout {
+		
+		.mkd-cta-inner {
+			text-align: center;
+		}
+		
+		.mkd-cta-text-holder,
+		.mkd-cta-button-holder {
+			width: 100%;
+		}
+		
+		.mkd-cta-button-holder {
+			margin: 28px 0 0;
+		}
+	}
+	
+	/***** Layout Style - end *****/
+	
+	/***** Columns Space - begin *****/
+	
+	&.mkd-two-halves-columns {
+		
+		.mkd-cta-text-holder,
+		.mkd-cta-button-holder {
+			width: 50%;
+		}
+	}
+	
+	&.mkd-two-thirds-columns {
+		
+		.mkd-cta-text-holder {
+			width: 66.66666666666667%;
+		}
+		
+		.mkd-cta-button-holder {
+			width: 33.33333333333333%;
+		}
+	}
+	
+	&.mkd-three-quarters-columns {
+		
+		.mkd-cta-text-holder {
+			width: 75%;
+		}
+		
+		.mkd-cta-button-holder {
+			width: 25%;
+		}
+	}
+	
+	&.mkd-four-fifths-columns {
+		
+		.mkd-cta-text-holder {
+			width: 80%;
+		}
+		
+		.mkd-cta-button-holder {
+			width: 20%;
+		}
+	}
+	
+	/***** Columns Space - end *****/
+}
+/* ==========================================================================
+   Call To Action shortcode style - end
+   ========================================================================== */

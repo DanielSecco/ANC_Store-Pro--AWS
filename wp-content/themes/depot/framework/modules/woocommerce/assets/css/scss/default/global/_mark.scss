@@ -1,0 +1,34 @@
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock styles - begin
+   ========================================================================== */
+
+.woocommerce {
+    
+    .mkd-onsale,
+    .mkd-out-of-stock,
+    .mkd-new-product {
+        position: absolute;
+        display: block;
+        top: 15px;
+        right: 20px;
+        width: auto;
+        color: $default-heading-color;
+        font-size: 12px;
+        font-family: $alternative-text-font;
+        line-height: 24px;
+        letter-spacing: 1px;
+        text-align: center;
+        z-index: 100;
+        @include mkdTransform(translateZ(0));
+        box-sizing: border-box;
+    }
+
+    .mkd-new-product {
+        right: auto;
+        left: 20px;
+    }
+}
+
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock styles - end
+   ========================================================================== */

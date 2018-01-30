@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Image Gallery shortcode responsive style - begin
+   ========================================================================== */
+
+@media only screen and (max-width: $laptop-landscape-large) {
+	
+	.mkd-image-gallery {
+		
+		.mkd-ig-grid {
+			$gallery_columns: ('6');
+			
+			@for $i from 0 to length($gallery_columns) {
+				&.mkd-ig-columns-#{nth($gallery_columns,$i+1)} {
+					$column_width: 100%/5;
+					
+					.mkd-ig-image {
+						width: $column_width;
+						
+						@media only screen and (min-width: $laptop-landscape-plus-pixel) {
+							&:nth-child(6n+1) {
+								clear: none;
+							}
+							
+							&:nth-child(5n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $laptop-landscape) {
+	
+	.mkd-image-gallery {
+		
+		.mkd-ig-grid {
+			$gallery_columns: ('5', '6');
+			
+			@for $i from 0 to length($gallery_columns) {
+				&.mkd-ig-columns-#{nth($gallery_columns,$i+1)} {
+					$column_width: 100%/4;
+					
+					.mkd-ig-image {
+						width: $column_width;
+						$gallery_list_columns_label: #{nth($gallery_columns,$i+1)};
+						
+						@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+							@if $gallery_list_columns_label == "5" {
+								&:nth-child(5n+1) {
+									clear: none;
+								}
+							} @else if $gallery_list_columns_label == "6" {
+								&:nth-child(6n+1) {
+									clear: none;
+								}
+							}
+							
+							&:nth-child(4n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $ipad-landscape) {
+	
+	.mkd-image-gallery {
+		
+		.mkd-ig-grid {
+			$gallery_columns_clear: ('2', '3');
+			$gallery_columns: ('4', '5', '6');
+			
+			@for $i from 0 to length($gallery_columns) {
+				&.mkd-ig-columns-#{nth($gallery_columns,$i+1)} {
+					$column_width: 100%/3;
+					
+					.mkd-ig-image {
+						width: $column_width;
+						
+						@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+							&:nth-child(3n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+			
+			@for $i from 0 to length($gallery_columns_clear) {
+				&.mkd-ig-columns-#{nth($gallery_columns_clear,$i+1)} {
+					
+					.mkd-ig-image {
+						
+						@media only screen and (min-width: $phone-landscape-plus-pixel) {
+							&:nth-child(#{$i+2}n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.owl-nav {
+			
+			.owl-prev {
+				left: 20px;
+			}
+			
+			.owl-next {
+				right: 20px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $ipad-portrait) {
+	
+	.mkd-image-gallery {
+		
+		.mkd-ig-grid {
+			$gallery_columns: ('4', '5', '6');
+			
+			@for $i from 0 to length($gallery_columns) {
+				&.mkd-ig-columns-#{nth($gallery_columns,$i+1)} {
+					$column_width: 50%;
+					
+					.mkd-ig-image {
+						width: $column_width;
+						
+						@media only screen and (min-width: $phone-landscape-plus-pixel) {
+							&:nth-child(2n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $phone-landscape) {
+	
+	.mkd-image-gallery {
+		
+		.mkd-ig-grid {
+			$gallery_columns: ('2', '3', '4', '5', '6');
+			
+			@for $i from 0 to length($gallery_columns) {
+				&.mkd-ig-columns-#{nth($gallery_columns,$i+1)} {
+					$column_width: 100%;
+					
+					.mkd-ig-image {
+						width: $column_width;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Image Gallery shortcode responsive style - end
+   ========================================================================== */

@@ -1,0 +1,412 @@
+/* ==========================================================================
+   WooCommerce Dropdown Cart styles - begin
+   ========================================================================== */
+
+.mkd-shopping-cart-holder {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    padding: 0px 10px;
+
+    .touch & {
+        cursor: pointer;
+    }
+
+    &.mkd-cart-info-is-disabled {
+
+        .mkd-header-cart {
+
+            .mkd-cart-info {
+                display: none;
+            }
+        }
+    }
+
+    .mkd-shopping-cart-inner {
+        position: relative;
+        display: table;
+        height: 100%;
+    }
+
+    .mkd-header-cart {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        color: $default-text-color;
+
+        .mkd-cart-icon-text {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 12px;
+            line-height: 1em;
+            color: $first-main-color;
+            font-weight: 700;
+
+            &:before {
+                display: block;
+                line-height: inherit;
+            }
+        }
+
+        .mkd-cart-info {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 0 0 5px;
+            font-size: 12px;
+            line-height: 1;
+            clear: both;
+            font-family: $alternative-text-font;
+            font-weight: 400;
+            color: $default-text-color;
+
+            .mkd-cart-info-number {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                padding: 0 8px 0 0;
+                margin: 0 5px 0 0;
+
+                &:after {
+                    position: absolute;
+                    right: -1px;
+                    content: '-';
+                }
+            }
+
+            .mkd-cart-info-total {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+            }
+        }
+
+        &:hover {
+            color: $default-heading-color;
+        }
+    }
+
+    &:hover {
+
+        .mkd-shopping-cart-dropdown {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.mkd-dark-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-shopping-cart-holder .mkd-header-cart {
+     color: $header-dark-color;
+
+     &:hover {
+         color: $header-dark-hover-color;
+     }
+ }
+
+.mkd-light-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-shopping-cart-holder .mkd-header-cart {
+    color: $header-light-color;
+
+    &:hover {
+        color: $header-light-hover-color;
+    }
+}
+
+.mkd-dark-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-shopping-cart-holder .mkd-header-cart .mkd-cart-icon-text,
+.mkd-dark-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-shopping-cart-holder .mkd-header-cart .mkd-cart-info {
+    color: $header-dark-color;
+
+    &:hover {
+        color: $header-dark-hover-color;
+    }
+}
+
+.mkd-light-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-shopping-cart-holder .mkd-header-cart .mkd-cart-icon-text,
+.mkd-light-header .mkd-page-header > div:not(.mkd-sticky-header):not(.fixed) .mkd-shopping-cart-holder .mkd-header-cart .mkd-cart-info {
+    color: $header-light-color;
+
+    &:hover {
+        color: $header-light-hover-color;
+    }
+}
+
+.mkd-shopping-cart-dropdown {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+    width: 231px;
+    background-color: #111;
+    text-align: left;
+    z-index: 1000;
+    box-sizing: border-box;
+    opacity:0;
+    visibility: hidden;
+    @include mkdTransition(opacity .4s ease-out);
+
+    ul {
+        margin: 25px;
+        padding: 0;
+        margin-bottom: 22px;
+
+        li {
+            position: relative;
+            display: inline-block;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            vertical-align: middle;
+            margin-bottom: 24px;
+
+            &.mkd-empty-cart {
+                border: 0;
+                min-height: auto;
+                margin: 0;
+            }
+        }
+    }
+
+    .mkd-item-image-holder {
+        position: relative;
+        display: block;
+        height: 100%;
+        width: 43px;
+        vertical-align: top;
+        float: left;
+
+        img {
+            display: block;
+        }
+    }
+
+    .mkd-item-info-holder {
+        position: relative;
+        display: block;
+        height: 100%;
+        width: calc(100% - 43px);
+        vertical-align: middle;
+        vertical-align: top;
+        padding-left: 10px;
+        float: left;
+        box-sizing: border-box;
+
+        .mkd-product-title {
+            display: block;
+            margin: 0;
+            padding: 0 20px 0 0;
+            box-sizing: border-box;
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            line-height: 20px;
+            position: relative;
+
+            a {
+                &:hover {
+                    color: #a5a5a5;
+                }
+            }
+        }
+
+        .remove {
+            position: absolute;
+            top: 4px;
+            right: -5px;
+            width: 18px;
+            height: 18px;
+            color: #fff;
+	        font-size: 12px;
+	        line-height: 24px;
+            text-align: center;
+
+            span {
+                display: block;
+                line-height: inherit;
+
+                &:before {
+                    display: block;
+                    line-height: inherit;
+                }
+            }
+
+            &:hover {
+                color: #a5a5a5;
+            }
+        }
+
+        .mkd-quantity {
+            display: inline-block;
+            margin: 0;
+            font-family: $alternative-text-font;
+            color: #a5a5a5;
+            font-size: 11px;
+            position: relative;
+            top: 0;
+            line-height: 11px;
+            vertical-align: middle;
+
+
+            &:after {
+                content: 'X';
+                display: inline-block;
+                position: relative;
+                padding-left: 3px;
+            }
+        }
+
+        .amount {
+            font-family:  $alternative-text-font;
+            font-size: 11px;
+            display: inline-block;
+            color: #a5a5a5;
+            line-height: 1;
+            position: relative;
+            top: 0px;
+            vertical-align: middle;
+            line-height: 11px;
+        }
+    }
+
+    .mkd-cart-bottom {
+        padding: 4px 0 0;
+
+        .mkd-subtotal-holder {
+            position: relative;
+            display: table;
+            width: 100%;
+            margin: 0 0 12px;
+
+            > * {
+                display: table-cell;
+                vertical-align: top;
+                color: $default-heading-color;
+                line-height: 20px;
+            }
+
+            .mkd-total {
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+
+            .mkd-total-amount {
+                text-align: right;
+                font-size: 12px;
+                font-weight: 400;
+                color: #fff;
+                font-family: Montserrat, sans-serif;
+            }
+        }
+
+        .mkd-btn-holder {
+            a {
+                font-weight: bold;
+                font-size: 9px;
+                color: #fff;
+                height: 34px;
+                line-height: 34px;
+                margin-left: 1px;
+                margin-right: -3px;
+            }
+        }
+
+        .mkd-btn-holder {
+
+            &:nth-child(2) {
+                a {
+                    font-weight: bold;
+                    font-size: 9px;
+                    color: #fff;
+                    background-color: transparent;
+                    border: 1px solid #505050;
+                    margin-bottom: 10px;
+
+                    &:hover {
+                        color: #fff;
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+
+        .mkd-btn-holder {
+
+            &:nth-child(3) {
+                a {
+                    font-weight: bold;
+                    font-size: 9px;
+                    color: #fff;
+                    background-color: #2e2e2e;
+
+                    &:hover {
+                        background-color: lighten($default-btn-hover-background-color, 10%);
+                        border-color: lighten($default-btn-hover-background-color, 10%);
+                    }
+                }
+            }
+        }
+
+
+        .mkd-cart-description {
+            @include mkdRelativeHolderLayout();
+            margin: 0 0 10px;
+
+            .mkd-cart-description-inner {
+                position: relative;
+                display: table;
+                width: 100%;
+                height: 100%;
+                padding: 17px 30px;
+                background-color: #f4f4f4;
+                text-align: center;
+                box-sizing: border-box;
+
+                span {
+                    position: relative;
+                    display: table-cell;
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: middle;
+                    color: $default-heading-color;
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        .mkd-view-cart {
+            @include mkdRelativeHolderLayout();
+            height: 44px;
+            line-height: 44px;
+            padding: 0 26px;
+            font-size: 10px;
+            font-weight: inherit;
+	        letter-spacing: 2px;
+            color: #fff;
+            background-color: $first-main-color;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            @include mkdTransition(color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out);
+
+            span {
+                display: block;
+            }
+
+            &:hover {
+                color: #fff;
+                background-color: $default-heading-color;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Dropdown Cart styles - end
+   ========================================================================== */
